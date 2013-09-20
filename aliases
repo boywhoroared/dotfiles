@@ -1,0 +1,23 @@
+# console
+alias v="$VISUAL"
+
+alias mkdir="mkdir -p"
+
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias cdd="cd -"
+alias l='ls'
+alias ll='ls -al'
+alias lh='ls -Alh'
+
+# git
+alias g="git"
+
+alias tmux="tmux -2"
+alias ssh='TERM=xterm ssh'
+# fixes the issue (screen-256 unknown terminal type)
+# with TMUX and the clear command over ssh 
+
+# Include custom aliases
+[[ -f ~/.aliases.local ]] && source ~/.aliases.local

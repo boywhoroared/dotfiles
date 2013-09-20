@@ -1,0 +1,42 @@
+Bundle "gmarik/vundle"
+
+Bundle 'troydm/easybuffer.vim'
+Bundle 'kien/ctrlp.vim'
+Bundle 'majutsushi/tagbar'
+Bundle 'mileszs/ack.vim'
+Bundle 'rking/ag.vim'
+Bundle 'SirVer/ultisnips'
+Bundle 'scrooloose/syntastic'
+Bundle 'kana/vim-smartinput'
+Bundle 'tpope/vim-commentary'
+Bundle 'tpope/vim-ragtag'
+Bundle 'tpope/vim-repeat'
+Bundle 'tpope/vim-surround'
+Bundle 'tpope/vim-unimpaired'
+Bundle 'tpope/vim-characterize'
+Bundle 'tpope/vim-eunuch'
+Bundle 'vim-scripts/Align'
+Bundle 'vim-scripts/greplace.vim'
+Bundle 'vim-scripts/matchit.zip'
+Bundle 'Soares/tabloid.vim'
+Bundle 'godlygeek/tabular'
+
+" Git
+Bundle 'airblade/vim-gitgutter'
+Bundle 'tpope/vim-fugitive'
+
+" Languages
+Bundle 'pangloss/vim-javascript'
+Bundle 'rmanalan/jshint.vim'
+Bundle 'othree/html5.vim'
+Bundle 'StanAngeloff/php.vim'
+Bundle 'juvenn/mustache.vim'
+Bundle 'shawncplus/phpcomplete.vim'
+Bundle 'tpope/vim-markdown'
+Bundle 'nelstrom/vim-markdown-folding'
+
+" Colorschemes 
+Bundle 'sjl/badwolf'
+Bundle 'noahfrederick/Hemisu'
+Bundle 'mitsuhiko/fruity-vim-colorscheme'
+Bundle 'jnurmine/Zenburn'

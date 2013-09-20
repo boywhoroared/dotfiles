@@ -1,0 +1,68 @@
+[core]
+	editor = vim
+	pager = 
+[color]
+	ui = true
+[alias]
+  st = status
+  s = status -sb
+  ci = commit
+  br = branch
+  cb = checkout -b 
+  co = checkout
+  d = diff
+  df = diff
+  dw = diff --word-diff
+  ds = diff --staged
+  cl = clone
+# Undo and Unstage
+  ut = rm -r --cached
+  us = reset HEAD
+
+# Log
+  l = log -p
+  ll = log --decorate --numstat
+  ld = log --decorate --date=relative
+  lt = log --graph --decorate --pretty=oneline --abbrev-commit
+  lta = log --graph --decorate --pretty=oneline --abbrev-commit --all
+  ly = !git yesterday
+  credit = commit --amend --author "$1 <$2>" -C HEAD
+
+  ff = merge --ff-only 
+  ffm = merge --ff-only origin/master
+
+  # merge feature branch
+  mf = merge --no-ff
+
+  # show commits on $1 that don't exist on the current branch 
+  unmerged = log --pretty=oneline --abbrev-commit $1 ^HEAD
+
+  # ignore a specific file by telling git to assume it has been unchanged
+  assume   = update-index --assume-unchanged
+  unassume = update-index --no-assume-unchanged
+  assumed  = "!git ls-files -v | grep ^h | cut -c 3-"
+
+# It's also handy when doing cherry-pick to copy changes from one branch to
+# another, to have git automatically put the original commit hash into the
+# commit comment. 
+  cp = cherry-pick -x
+
+  rj = "!vim -o $1.rej"
+
+[merge]
+	log = true
+	#summary = true
+	conflictstyle = diff3
+
+[rerere]
+	enabled = 1
+
+[diff]
+	mnemonicprefix = true
+
+[push]
+	default = "simple"
+
+[include]
+	path = .gitconfig.local
+
