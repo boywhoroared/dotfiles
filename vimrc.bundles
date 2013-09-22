@@ -34,9 +34,11 @@ Bundle 'juvenn/mustache.vim'
 Bundle 'shawncplus/phpcomplete.vim'
 Bundle 'tpope/vim-markdown'
 Bundle 'nelstrom/vim-markdown-folding'
+Bundle 'Rykka/riv.vim'
 
 " Colorschemes 
 Bundle 'sjl/badwolf'
 Bundle 'noahfrederick/Hemisu'
 Bundle 'mitsuhiko/fruity-vim-colorscheme'
 Bundle 'jnurmine/Zenburn'
+Bundle 'croaky/vim-colors-github'
