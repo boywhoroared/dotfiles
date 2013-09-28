@@ -287,7 +287,8 @@ nnoremap J mzJ`z
 nnoremap S i<cr><esc>^mwgk:silent! s/\v +$//<cr>:noh<cr>`w
 
 " Quick Escape
-inoremap jj <Esc>
+" http://danielmiessler.com/blog/using-jk-vs-jj-for-esc-remapping-in-vim-steve-losh
+inoremap jk <Esc>
 
 " Quick Save. 
 nmap <Leader>w :w<CR>
@@ -350,6 +351,13 @@ nmap <d-9> 9gt
 "}}}
 
 "}}}
+
+if &term =~ '256color'
+  " Disable Background Color Erase (BCE) so that color schemes
+  " work properly when Vim is used inside tmux and GNU screen.
+  " See also http://snk.tuxfamily.org/log/vim-256color-bce.html
+  set t_ut=
+endif
 
 " Plugins {{{
 
