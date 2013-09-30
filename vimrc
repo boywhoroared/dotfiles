@@ -1,116 +1,45 @@
+" SETUP {{{
 set nocompatible
-filetype off
-filetype plugin indent on
 
-" UTF-8. UTF-8 EVERYWHERE. 
+if has("win32") || has("win64")
+  let $MYVIM=$HOME.'/vimfiles'
+else
+  let $MYVIM=$HOME.'/.vim'
+endif
+
+" UTF-8. UTF-8 EVERYWHERE.
 let &termencoding = &encoding
 set encoding=utf-8
 
-if has("win32") || has("win64")
-   set runtimepath=$LocalAppData\Vim,$VIMRUNTIME,$LocalAppData\Vim\after
-endif
+" VUNDLE {{{
+" Vim plugin manager
 
-" Vundle
-set rtp+=~/.vim/bundle/vundle
-call vundle#rc()
+if version >= 703
+  filetype off
 
-if filereadable(expand("~/.vimrc.bundles"))
-  source ~/.vimrc.bundles
-endif
+  set rtp+=$MYVIM/bundle/vundle
+  call vundle#rc()
 
-if filereadable(expand("~/.vimrc.bundles.local"))
-  source ~/.vimrc.bundles.local
-endif
+  let $VUNDLE_BUNDLES = $MYVIMRC.'.bundles'
+  let $VUNDLE_BUNDLES_LOCAL = $MYVIMRC.'.bundles.local'
 
-set showmode
-set showcmd
-set ch=2
-set title
-set hidden
-set lazyredraw
-set backspace=indent,eol,start
-set virtualedit+=block
-set clipboard=unnamed 
-
-" 'Turn off everything that beeps.' - Scott Hanselman.
-set noerrorbells
-set novisualbell
-set vb t_vb=
-set tm=500
-
-" Terminal {{{
-set ttyfast
-set notimeout
-set ttimeout
-set ttimeoutlen=50
-
-" Enable basic mouse behavior such as resizing buffers.
-set mouse=a
-if exists('$TMUX')  " Support resizing in tmux
-  set ttymouse=xterm2
-endif
-"}}}
-
-" Color {{{
-syntax on
-set bg=dark
-colorscheme badwolf
-"}}}
-
-" Editing {{{
-set autoindent
-set smartindent
-set softtabstop=2
-set shiftwidth=2
-set tabstop=2
-set expandtab
-set nosmarttab
-set shiftround
-
-set nowrap
-set textwidth=80
-set formatoptions=q1rnl
-set colorcolumn=+1
-
-set nonumber
-set norelativenumber
-
-if &listchars ==# 'eol:$'
-  set listchars=tab:>\ ,trail:-,extends:>,precedes:<,nbsp:+
-  if &termencoding ==# 'utf-8' || &encoding ==# 'utf-8'
-    let &listchars = "eol:\u00AC,tab:\u25b8 ,trail:\u00b7,extends:\u2192,precedes:\u2190,nbsp:\u02fd"
+  if filereadable($VUNDLE_BUNDLES)
+    source $VUNDLE_BUNDLES
   endif
-endif
-"}}}
 
-" History and Undo {{{
-if &history < 1000
-  set history=1000
-endif
-set viminfo^=!
-
-" Keep backups and undo in a central location.
-let s:dir = (has("win32") || has("win64")) ? '$LocalAppData/Vim/Temp' : '~/.vim/tmp'
-if isdirectory(expand(s:dir))
-  if &directory =~# '^\.,'
-    let &directory = expand(s:dir) . '/swap//,' . &directory
+  if filereadable($VUNDLE_BUNDLES_LOCAL)
+    source $VUNDLE_BUNDLES_LOCAL
   endif
-  if &backupdir =~# '^\.,'
-    let &backupdir = expand(s:dir) . '/backup//,' . &backupdir
-  endif
-  if exists('+undodir') && &undodir =~# '^\.\%(,\|$\)'
-    let &undodir = expand(s:dir) . '/undo//,' . &undodir
-  endif
+
 endif
+" }}}
 
-if exists('+undofile')
-  set undofile
-endif
+" }}}
 
-set noswapfile
-" "}}}
+filetype plugin indent on
 
-" Searching and Movement {{{
+" 1 IMPORTANT
+" 2 MOVING AROUND, SEARCHING AND PATTERNS {{{
 set ignorecase
 set smartcase
 set incsearch
@@ -125,16 +54,12 @@ endif
 if !exists('g:loaded_matchit') && findfile('plugin/matchit.vim', &rtp) ==# ''
   runtime! macros/matchit.vim
 endif
-set showmatch 
+set showmatch
 set mat=5
 
 " Use sane regexes.
 nnoremap / /\v
 vnoremap / /\v
-
-set scrolloff=3
-set sidescroll=1
-set sidescrolloff=3
 
 " Keep search matches in the middle of the window.
 nnoremap n nzzzv
@@ -149,34 +74,71 @@ nnoremap <c-o> <c-o>zz
 if executable('ag')
   " Use Ag over Grep
   set grepprg=ag\ --nogroup\ --nocolor
-
-  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
-  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
-
-  " ag is fast enough that CtrlP doesn't need to cache
-  let g:ctrlp_use_caching = 0
 endif
 
-"}}}
-
-" Tags {{{
+" }}}
+" 3 TAGS {{{
 set tags+=./tags,~/tags/_shared.tags
 " including _shared tags should probably just be done as a php ft
 
 " Use c-\ to do c-] but open it in a new split.
 nnoremap <c-\> <c-w>v<c-]>zvzz
-" }}}
 
-" Splits {{{
+" }}}
+" 4 DISPLAYING TEXT {{{
+set lazyredraw
+set nowrap
+set ch=3
+
+set scrolloff=3
+set sidescroll=1
+set sidescrolloff=4
+
+set nonumber
+set norelativenumber
+
+if &listchars ==# 'eol:$'
+  set listchars=tab:>\ ,trail:-,extends:>,precedes:<,nbsp:+
+  if &termencoding ==# 'utf-8' || &encoding ==# 'utf-8'
+    let &listchars = "eol:\u00AC,tab:\u25b8 ,trail:\u00b7,extends:\u2192,precedes:\u2190,nbsp:\u02fd"
+  endif
+endif
+
+" Scroll the viewport faster by scrolling 3 lines at a time, rather than one
+nnoremap <C-e> 3<C-e>
+nnoremap <C-y> 3<C-y>
+vnoremap <C-e> 3<C-e>
+vnoremap <C-y> 3<C-y>
+" }}}
+" 5 SYNTAX, HIGHLIGHTING AND SPELLING {{{
+if &term =~ '256color'
+  " Disable Background Color Erase (BCE) so that color schemes
+  " work properly when Vim is used inside tmux and GNU screen.
+  " See also http://snk.tuxfamily.org/log/vim-256color-bce.html
+  set t_ut=
+endif
+
+syntax on
+set bg=dark
+colorscheme badwolf
+set colorcolumn=+3
+
+
+" Highlight the line the cursor is on when in Normal mode.
+augroup cline
+    au!
+    au WinLeave,InsertEnter * set nocursorline
+    au WinEnter,InsertLeave * set cursorline
+augroup END
+" }}}
+" 6 MULTIPLE WINDOWS {{{
+set hidden
 set splitbelow
 set splitright
 
 " resize splits when window is resized
 au VimResized * :wincmd =
-"}}}
 
-" Statusline {{{
-set ruler        " Always show the cursor position
 set laststatus=2 " Always have a status line
 
 set statusline=%f    " Path.
@@ -201,9 +163,109 @@ set statusline+=)
 
 " Line and column position and counts.
 set statusline+=\ (line\ %l\/%L,\ col\ %03c)
+"
+" }}}
+" 7 MULTIPLE TAB PAGES
+" 8 TERMINAL {{{
+set title
+set ttyfast
+set notimeout
+set ttimeout
+set ttimeoutlen=50
+
+" }}}
+" 9 USING THE MOUSE {{{
+set mouse=a
+if exists('$TMUX')  " Support resizing in tmux
+  set ttymouse=xterm2
+endif
+" }}}
+" 10 GUI
+" 11 PRINTING
+" 12 MESSAGES AND INFO {{{
+set showmode
+set showcmd
+set ruler        " Always show where I am in the file
+
+" 'Turn off everything that beeps.' - Scott Hanselman.
+set noerrorbells
+set novisualbell
+set vb t_vb=
+" }}}
+" 13 SELECTING TEXT {{{
+set clipboard=unnamed 
+" }}}
+" 14 EDITING TEXT {{{
+set backspace=indent,eol,start
+set virtualedit+=block
+set textwidth=80
+set formatoptions=q1rnl
+" }}}
+" 15 TABS AND INDENTING {{{
+set autoindent
+set smartindent
+set softtabstop=2
+set shiftwidth=2
+set tabstop=2
+set expandtab
+set nosmarttab
+set shiftround
+" }}}
+" 16 FOLDING {{{
+set foldlevelstart=0
+
+" Space to toggle folds.
+nnoremap <Space> za
+vnoremap <Space> za
+
+" Make zO recursively open whatever top level fold we're in, no matter where the
+" cursor happens to be.
+nnoremap zO zCzO
+" }}}
+" 17 DIFF MODE
+" 18 MAPPING {{{
+set tm=500 " length of time to wait before timing out while entering a key code
+" }}}
+
+" 19 READING AND WRITING FILES {{{
+" Keep backups and undo in a central location.
+if &backupdir =~# '^\.,'
+  if has("win32") || has("win64")
+    let &backupdir=$TMP
+  else
+    let &backupdir=/tmp
+  endif
+endif
+
+if exists('+undodir') && &undodir =~# '^\.\%(,\|$\)'
+  if has("win32") || has("win64")
+    let &undodir=$TMP
+  else
+    let &undodir=/tmp
+  endif
+endif
+
+if exists('+undofile')
+  set undofile
+endif
 "}}}
 
-" Completion {{{
+" 21 THE SWAP FILE {{{
+if has("win32") || has("win64")
+  set directory=$TMP
+elseif
+  set directory=/tmp
+endif
+set noswapfile
+
+" }}}
+" 21 COMMAND LINE EDITING {{{
+" Remember, at least, the last 1000 command lines
+if &history < 1000
+  set history=1000
+endif
+
+" Configure command-line completion matches
 set wildmenu
 set wildmode=list:longest,full
 set wildignore+=.hg,.git,.svn
@@ -212,6 +274,16 @@ set wildignore+=*.o,*.obj,*.exe,*.dll,*.manifest
 set wildignore+=*.pyc
 set wildignore+=*.sw?
 set wildignore+=*.orig
+" }}}
+" 23 EXECUTING EXTERNAL COMMANDS
+" 23 RUNNING MAKE AND JUMPING TO ERRORS
+" 24 SYSTEM SPECIFIC
+" 25 LANGUAGE SPECIFIC
+" 26 MULTI-BYTE CHARACTERS
+" 27 VARIOUS
+set viminfo^=!
+
+
 
 autocmd FileType python set omnifunc=pythoncomplete#Complete
 autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
@@ -222,7 +294,6 @@ autocmd FileType php set omnifunc=phpcomplete#CompletePHP
 autocmd FileType c set omnifunc=ccomplete#Complete
 autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
 autocmd FileType ruby,perl,tex set shiftwidth=2
-"}}}
 
 " Trailing Whitespace {{{
 " Only show when not in Insert Mode
@@ -231,17 +302,6 @@ augroup trailing
     au InsertEnter * :set listchars-=trail:⌴
 augroup END
 "}}}
-
-" Cursorline {{{
-" Only show cursorline in the current window and in normal mode.
-
-augroup cline
-    au!
-    au WinLeave,InsertEnter * set nocursorline
-    au WinEnter,InsertLeave * set cursorline
-augroup END
-
-" }}}
 
 " Return to Line {{{
 " Make sure Vim returns to the same line when you reopen a file.
@@ -265,12 +325,6 @@ nnoremap k gk
 nnoremap <leader>q gqip
 " Hard Re-wrap and leave cursor at current word after formatting
 nnoremap <leader>qw gwip 
-
-" Scroll the viewport faster by scrolling 3 lines at a time, rather than one
-nnoremap <C-e> 3<C-e>
-nnoremap <C-y> 3<C-y>
-vnoremap <C-e> 3<C-e>
-vnoremap <C-y> 3<C-y>
 
 " ` is more useful than ' but less accessible.
 nnoremap ' `
@@ -307,15 +361,6 @@ nnoremap <leader>s vip:!sort<cr>
 vnoremap <leader>s :!sort<cr>
 
 " Folding {{{
-set foldlevelstart=0
-
-" Space to toggle folds.
-nnoremap <Space> za
-vnoremap <Space> za
-
-" Make zO recursively open whatever top level fold we're in, no matter where the
-" cursor happens to be.
-nnoremap zO zCzO
 "}}}
 
 " Editing files {{{
@@ -352,13 +397,6 @@ nmap <d-9> 9gt
 
 "}}}
 
-if &term =~ '256color'
-  " Disable Background Color Erase (BCE) so that color schemes
-  " work properly when Vim is used inside tmux and GNU screen.
-  " See also http://snk.tuxfamily.org/log/vim-256color-bce.html
-  set t_ut=
-endif
-
 " Plugins {{{
 
 " CtrlP
@@ -366,6 +404,14 @@ let g:ctrlp_working_path_mode = 0
 let g:ctrlp_match_window_reversed = 1
 let g:ctrlp_max_height = 20
 let g:ctrlp_extensions = ['tag']
+
+if executable('ag')
+  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+
+  " ag is fast enough that CtrlP doesn't need to cache
+  let g:ctrlp_use_caching = 0
+endif
 
 " Easy Buffer 
 nmap <Leader>. :EasyBuffer<CR>
@@ -379,5 +425,7 @@ let g:syntastic_phpcs_conf="--warning-severity=0 --standard=/data/ese/ruleset.xm
 " }}}
 
 " Load local vimrc
-source ~/.vimrc.local
+if filereadable($MYVIMRC.'local')
+  source $MYVIMRC.'local'
+endif
 
