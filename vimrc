@@ -226,36 +226,24 @@ nnoremap zO zCzO
 " 18 MAPPING {{{
 set tm=500 " length of time to wait before timing out while entering a key code
 " }}}
-
 " 19 READING AND WRITING FILES {{{
 " Keep backups and undo in a central location.
-if &backupdir =~# '^\.,'
-  if has("win32") || has("win64")
-    let &backupdir=$TMP
-  else
-    let &backupdir=/tmp
-  endif
+if !isdirectory($MYVIM."/tmp/backup")
+  call mkdir($MYVIM."/tmp/backup", "p")
 endif
-
-if exists('+undodir') && &undodir =~# '^\.\%(,\|$\)'
-  if has("win32") || has("win64")
-    let &undodir=$TMP
-  else
-    let &undodir=/tmp
-  endif
-endif
-
-if exists('+undofile')
-  set undofile
-endif
+set backupdir-=.
+set backupdir+=.
+set backupdir-=~/
+set backupdir^=$MYVIM/tmp/backup//
 "}}}
-
 " 21 THE SWAP FILE {{{
-if has("win32") || has("win64")
-  set directory=$TMP
-elseif
-  set directory=/tmp
+if !isdirectory($MYVIM."/tmp/swap")
+  call mkdir($MYVIM."/tmp/swap", "p")
 endif
+set directory-=.
+set directory+=.
+set directory-=~/
+set directory^=$MYVIM/tmp/swap//
 set noswapfile
 
 " }}}
