@@ -6,6 +6,7 @@ Bundle 'majutsushi/tagbar'
 Bundle 'mileszs/ack.vim'
 Bundle 'rking/ag.vim'
 Bundle 'SirVer/ultisnips'
+Bundle 'honza/vim-snippets'
 Bundle 'scrooloose/syntastic'
 Bundle 'kana/vim-smartinput'
 Bundle 'tpope/vim-commentary'
@@ -24,6 +25,7 @@ Bundle 'godlygeek/tabular'
 " Git
 Bundle 'airblade/vim-gitgutter'
 Bundle 'tpope/vim-fugitive'
+Bundle 'gregsexton/gitv'
 
 " Languages
 Bundle 'jelera/vim-javascript-syntax'
@@ -37,6 +39,8 @@ Bundle 'juvenn/mustache.vim'
 Bundle 'tpope/vim-markdown'
 Bundle 'nelstrom/vim-markdown-folding'
 Bundle 'Rykka/riv.vim'
+Bundle 'groenewege/vim-less'
+Bundle 'hail2u/vim-css3-syntax.git'
 
 " Colorschemes 
 Bundle 'sjl/badwolf'
