@@ -20,3 +20,14 @@ nmap <Leader>m :Explore<CR>
 
 " Syntastic
 let g:syntastic_phpcs_conf="--warning-severity=0 --standard=/data/ese/ruleset.xml"
+
+" SQLComplete: GEEZUS H CHRIST.
+let g:omni_sql_no_default_maps = 1
+
+" GitGutter
+let g:gitgutter_enabled = 0
+
+" Syntastic
+let g:syntastic_check_on_open=0
+let g:syntastic_auto_loc_list=1
+
