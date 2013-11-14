@@ -398,7 +398,7 @@ endif
 " }}}
 
 " Load local vimrc
-if filereadable($MYVIMRC.'local')
-  source $MYVIMRC.'local'
+if filereadable($MYVIMRC.'.local')
+  source $MYVIMRC.local
 endif
 
