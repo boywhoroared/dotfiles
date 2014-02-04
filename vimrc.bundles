@@ -21,6 +21,8 @@ Bundle 'vim-scripts/greplace.vim'
 Bundle 'vim-scripts/matchit.zip'
 Bundle 'Soares/tabloid.vim'
 Bundle 'godlygeek/tabular'
+Bundle 'reedes/vim-wordy'
+Bundle 'kurkale6ka/vim-pairs'
 
 " Git
 Bundle 'airblade/vim-gitgutter'
@@ -53,3 +55,4 @@ Bundle 'morhetz/gruvbox'
 Bundle 'chriskempson/base16-vim'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'marcelbeumer/spacedust.vim'
+Bundle 'reedes/vim-colors-pencil'
