@@ -13,6 +13,7 @@ alias lh='ls -Alh'
 
 # git
 alias g="git"
+alias gap="git add -p"
 
 alias tmux="tmux -2"
 alias ssh='TERM=xterm ssh'
