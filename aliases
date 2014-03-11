@@ -3,13 +3,25 @@ alias v="$VISUAL"
 
 alias mkdir="mkdir -p"
 
+# Directories
+alias ~="cd ~"
 alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
 alias cdd="cd -"
-alias l='ls'
-alias ll='ls -al'
+
+alias l='ls -f'
+alias ll='ls -aAplhF'
 alias lh='ls -Alh'
+# only list directories
+alias ld="ls -lF | grep '^d'"
+
+# History
+alias h="history"
+# find a command in history
+alias h?="history | grep"
+# edit a command from history. I always forget fc
+alias he="fc"
 
 # git
 alias g="git"
