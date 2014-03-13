@@ -10,3 +10,6 @@ fi
 if [ -f ~/dotfiles/aliases ]; then
     source ~/dotfiles/aliases
 fi
+
+source ~/dotfiles/bash/prompt
+
