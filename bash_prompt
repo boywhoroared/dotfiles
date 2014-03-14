@@ -29,11 +29,11 @@ function prompt_user_host() {
 
 # use the contributed git prompt
 if command -v brew -v 2>/dev/null; then
-	local git_prompt="$(brew --prefix git)/etc/bash_completion.d/git-prompt.sh"
+	GIT_PROMPT="$(brew --prefix git)/etc/bash_completion.d/git-prompt.sh"
 else
-	local git_prompt="~/etc/bash/git-prompt.sh"
+	GIT_PROMPT="~/etc/bash/git-prompt.sh"
 fi
-[ -r "$git_prompt" ] && [ -f "$git_prompt" ] && source "$git_prompt"
+[ -r "$GIT_PROMPT" ] && [ -f "$GIT_PROMPT" ] && source "$GIT_PROMPT"
 
 PROMPT_COMMAND='__git_ps1 "$(prompt_user_host)\w" "\n\$ "'
 
