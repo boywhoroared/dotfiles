@@ -1,14 +1,13 @@
 # console
 alias v="$VISUAL"
 
-alias mkdir="mkdir -p"
-
 # Directories
 alias ~="cd ~"
 alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
 alias cdd="cd -"
+alias mkdir="mkdir -p"
 
 alias l='ls -f'
 alias ll='ls -aAplhF'

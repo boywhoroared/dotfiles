@@ -23,12 +23,17 @@ function prompt_git_branch() {
 
 function prompt_user_host() {
   # only show username & host for SSH
-  [[ "$SSH_CONNECTION" != '' ]] && echo '%n@%m ':
+  [[ "$SSH_CONNECTION" != '' ]] && echo '\u@\h '
 }
 
-# TODO: Should check for brew first.
-source $(brew --prefix git)/etc/bash_completion.d/git-completion.bash
-source $(brew --prefix git)/etc/bash_completion.d/git-prompt.sh
+
+# use the contributed git prompt
+if command -v brew -v 2>/dev/null; then
+	local git_prompt="$(brew --prefix git)/etc/bash_completion.d/git-prompt.sh"
+else
+	local git_prompt="~/etc/bash/git-prompt.sh"
+fi
+[ -r "$git_prompt" ] && [ -f "$git_prompt" ] && source "$git_prompt"
 
 PROMPT_COMMAND='__git_ps1 "$(prompt_user_host)\w" "\n\$ "'
 
