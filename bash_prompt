@@ -35,5 +35,7 @@ else
 fi
 [ -r "$GIT_PROMPT" ] && [ -f "$GIT_PROMPT" ] && source "$GIT_PROMPT"
 
+GIT_PS1_SHOWUPSTREAM="auto"
+GIT_PS1_SHOWCOLORHINTS=1
 PROMPT_COMMAND='__git_ps1 "$(prompt_user_host)\w" "\n\$ "'
 
