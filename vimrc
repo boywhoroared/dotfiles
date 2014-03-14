@@ -1,6 +1,5 @@
 " SETUP {{{
 set nocompatible
-
 if has("win32") || has("win64")
   let $MYVIM=$HOME.'/vimfiles'
 else
@@ -94,8 +93,14 @@ set scrolloff=3
 set sidescroll=1
 set sidescrolloff=4
 
-set nonumber
-set norelativenumber
+" line numbers
+" TODO: Maybe add a key mapping to toggle.
+set number
+if version >= 704
+  " 7.4 shows the absolute line number for the current line
+  " and relative numbers for all others, if nu and rnu are on
+  set relativenumber
+endif
 
 if &listchars ==# 'eol:$'
   set listchars=tab:>\ ,trail:-,extends:>,precedes:<,nbsp:+
@@ -121,8 +126,11 @@ endif
 syntax on
 set bg=dark
 colorscheme badwolf
-set colorcolumn=+3
 
+if version >= 703
+  " show a column marker for line length. text SHOULD not go past this
+  set colorcolumn=+3
+endif
 
 " Highlight the line the cursor is on when in Normal mode.
 augroup cline
