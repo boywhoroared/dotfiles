@@ -119,11 +119,11 @@
 
   # ls-changed - list files that were changed in <commit-ish>
   # ex. git ls-changed HEAD^1
-	# ex. open all files changed in last commit: vim -p ($git ls-changed HEAD)
-	ls-changed = diff-tree --no-commit-id --name-only -r 
-  
+  # ex. open all files changed in last commit: vim -p ($git ls-changed HEAD)
+  ls-changed = diff-tree --no-commit-id --name-only -r 
+
   # ls-changes - list files that were changed in <commit-ish> with their status
-	ls-changes = diff-tree --no-commit-id --name-status -r 
+  ls-changes = diff-tree --no-commit-id --name-status -r 
 
   # merge but without autocommit, and with a commit even if the merge resolved as a fast-forward.
   me = merge --no-commit --no-ff
@@ -242,7 +242,7 @@
   lt = log --graph --decorate --pretty=oneline --abbrev-commit
   lta = log --graph --decorate --pretty=oneline --abbrev-commit --all
   ly = !git yesterday
-   lo = log --oneline --abbrev-commit
+  lo = log --oneline --abbrev-commit
 
   log-graph = log --all --graph --decorate
   log-refs = log --all --graph --decorate --oneline --simplify-by-decoration --no-merges
