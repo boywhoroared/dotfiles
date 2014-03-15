@@ -8,7 +8,6 @@
 [alias]
 
 ## ALIASES ##
-
   # add - record file contents to the index.
   a = add
 
@@ -63,6 +62,9 @@
   # add by patch - looks at each change, and asks if we want to put it in the repo.
   ap = add -p
 
+  # add all
+  aa = add --al
+
   # branch - list, create, or delete branches [same as "b"]
   br = branch
 
@@ -71,6 +73,15 @@
 
   # branch and only list branches whose tips are not reachable from the specified commit (HEAD if not specified).
   brnm = branch --no-merged
+
+  # create the branch remotely, then checkout.
+  create-branch = !sh -c 'git push origin HEAD:refs/heads/$1 && git fetch origin && git branch --track $1 origin/$1 && cd . && git checkout $1' -
+
+  # delete local and remote branch
+  delete-branch = !sh -c 'git push origin :refs/heads/$1 && git remote prune origin && git branch -D $1' -
+
+  # merge the last branch to master
+  merge-branch = !git checkout master && git merge @{-1}
 
   # commit - amend the tip of the current branch rather than creating a new commit.
   ca = commit --amend
@@ -400,6 +411,9 @@
 
 [push]
   default = "simple"
+
+[commit]
+  template = ~/.gitmessage
 
 [include]
   path = .gitconfig.local
