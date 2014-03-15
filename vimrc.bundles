@@ -23,11 +23,10 @@ Bundle 'Soares/tabloid.vim'
 Bundle 'godlygeek/tabular'
 Bundle 'reedes/vim-wordy'
 Bundle 'kurkale6ka/vim-pairs'
+Bundle 'zaiste/tmux.vim'
 
 " Git
-Bundle 'airblade/vim-gitgutter'
 Bundle 'tpope/vim-fugitive'
-Bundle 'gregsexton/gitv'
 
 " Languages
 Bundle 'jelera/vim-javascript-syntax'
