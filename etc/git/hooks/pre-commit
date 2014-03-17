@@ -1,0 +1,117 @@
+#!/bin/bash
+
+# PRE-COMMIT HOOK
+# - PHP Lint: Prevent .php source from being committed if errors are generated from
+#		linting.
+#
+# - Debugging: Do not commit debugging code.
+
+# To install this you can either copy or symlink it to
+# $GIT_DIR/hooks/pre-commit.
+
+# necessary check for initial commit
+if git rev-parse --verify HEAD >/dev/null 2>&1
+then
+  # if we have previous commits, diff against HEAD 
+	AGAINST=HEAD
+else
+	# Initial commit: diff against an empty tree object
+	AGAINST=4b825dc642cb6eb9a060e54bf8d69288fbee4904
+fi
+
+
+function pre_commit_php_lint() {
+echo "==> pre-commit: syntax check..."
+# get a list of staged files
+for line in $(git diff-index --cached --full-index $AGAINST)
+do
+	# split needed values
+	# see 'Raw output format' at http://git-scm.com//docs/git-diff-index for details
+	sha=$(echo $line | cut -d' ' -f4)
+	temp=$(echo $line | cut -d' ' -f5)
+	status=$(echo $temp | cut -d'	' -f1)
+	filename=$(echo $temp | cut -d'	' -f2)
+
+	# file extension
+	ext=$(echo $filename | sed 's/^.*\.//')
+
+	# only check files with php extension
+	if [ $ext != "php" ]
+	then
+		continue
+	fi
+
+	# do not check deleted files
+	if [ $status = "D" ]
+	then
+		continue
+	fi
+
+	# check the staged file content for syntax errors
+	# using php -l (lint)
+	result=$(git cat-file -p $sha | php -n -l -ddisplay_errors\=1 -derror_reporting\=E_ALL -dlog_errrors\=0 2>&1)
+	if [ $? -ne 0 ]
+	then
+		# Swap back in correct filenames
+		errors=$(echo "$errors"; echo "$result" | grep ':' | sed -e "s@in - on@in $filename on@g")
+	fi
+done
+
+if [ -n "$errors" ]
+then
+	echo "==> pre-commit: syntax check failed. "
+	echo "$errors"
+	errors=""
+	exit 1
+fi
+}
+
+function pre_commit_php_debugging() {
+echo "==> pre-commit: syntax check..."
+# get a list of staged files
+for line in $(git diff-index --cached --full-index $AGAINST)
+do
+	# split needed values
+	# see 'Raw output format' at http://git-scm.com//docs/git-diff-index for details
+	sha=$(echo $line | cut -d' ' -f4)
+	temp=$(echo $line | cut -d' ' -f5)
+	status=$(echo $temp | cut -d'	' -f1)
+	filename=$(echo $temp | cut -d'	' -f2)
+
+	# file extension
+	ext=$(echo $filename | sed 's/^.*\.//')
+
+	# only check files with php extension
+	if [ $ext != "php" ]
+	then
+		continue
+	fi
+
+	# do not check deleted files
+	if [ $status = "D" ]
+	then
+		continue
+	fi
+
+	# check the staged file content for calls to debugging functions
+	result=$(git cat-file -p $sha | grep -n "\(var_dump\|print_r\|debug_print_backtrace\|error_log\)")
+	if [ $? -ne 1 ]
+	then
+		errors=$(echo "$errors"; echo "FILE: $filename\n$result")
+	fi
+done
+
+if [ -n "$errors" ]
+then
+	echo "==> pre-commit: debugging check failed."
+	echo "$errors"
+	errors=""
+	exit 1
+fi
+}
+
+pre_commit_php_lint
+pre_commit_php_debugging
+
+# TODO: Check for merge conflict markers.
+# pre_commit_conflictmarkers

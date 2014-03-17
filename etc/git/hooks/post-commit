@@ -1,0 +1,19 @@
+#!/bin/bash
+
+# POST Commit
+# - phpcs
+
+ROOT_DIR=$(git rev-parse --show-toplevel)
+PHPCS_OPTIONS=$(git config --get hooks.phpcsOptions)
+FILES_CHANGED=$(git diff-tree --no-commit-id --name-only -r HEAD)
+
+function post_commit_php_phpcs() {
+  echo "==> Check: phpcs"
+  for FILE in $FILES_CHANGED 
+  do
+    phpcs --report=full $PHPCS_OPTIONS "$ROOT_DIR/$FILE"
+  done
+  unset FILE
+}
+
+post_commit_php_phpcs
