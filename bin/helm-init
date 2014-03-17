@@ -1,0 +1,111 @@
+#!/bin/bash
+
+# Helm: init
+# Clone repo and setup hooks.
+
+# Hooks can be copied automagically by having 
+#
+# [init]
+#   templatedir = /path/to/template/dir/
+# 
+# in your .gitconfig. git-init will copy any files in the template dir to
+# the $GIT_DIR (.git)
+
+# Requires
+# HELM_UI_DIR
+# HELM_GIT_URL
+
+REPO=$1
+BRANCH=$2
+WORK_DIR="$HELM_UI_DIR/$BRANCH"
+URL="$HELM_GIT_URL/$REPO.git"
+
+function helm_init_abort() {
+  echo "==> Aborted. Cleaning up..."
+  rm -ri $WORK_DIR
+  exit 0
+}
+
+function _check_env() {
+  if [ -z $HELM_UI_DIR ]
+  then
+    echo '$HELM_UI_DIR is empty. Please set the path to your UI directory.'
+    echo 'Usually, you can set it to $SPUIDIR or /data/webdev/$USER'
+    exit 1;
+  fi
+
+  if [ -z $HELM_GIT_URL ]
+  then
+    echo '$HELM_GIT_URL is empty. Please set the URL to the UI git server.'
+    exit 1;
+  fi
+}
+
+function repo_exists() {
+  git ls-remote $1 &>/dev/null
+  if [ $? = 0 ]
+  then
+    echo 1
+  else
+    echo 0
+  fi
+}
+
+function branch_exists() {
+  git ls-remote --heads --exit-code $1 $2
+  if [ $? -eq 2 ]
+  then
+    echo 1
+  else
+    echo 0
+  fi
+}
+
+function helm_git_clone() {
+  if [ ! -d $WORK_DIR ]
+  then
+    echo "==> Create work directory $WORK_DIR ..."
+    mkdir $WORK_DIR
+  fi
+
+  if [ $(repo_exists $URL) ]
+  then
+    # imitate git clone, but only fetch & track master
+    echo "==> Create local repo..."
+    cd $WORK_DIR
+    git init
+    echo "==> Add master at $URL..."
+    git remote add -f -t master -m master origin $URL
+    git checkout master
+    echo "==> Fetch submodules..."
+    git submodule update --init
+    # create the ticket branch
+    if $(branch_exists origin $BRANCH)
+    then
+      # checkout existing branch
+      echo "==> Fetch $BRANCH from origin..."
+      git fetch origin $BRANCH
+      git checkout $BRANCH
+    else
+      # create the remote branch, then create a local tracking branch
+      echo "==> Create $BRANCH..."
+      git push origin HEAD:refs/heads/$BRANCH
+      git fetch origin $BRANCH
+      git branch --track $branch origin/$BRANCH
+      cd $WORK_DIR
+      git checkout $BRANCH
+    fi
+  else
+    echo "Error: $URL does not exist or is inaccessible.";
+    exit 1;
+  fi
+
+  echo "==> Done."
+  exit 0;
+}
+
+_check_env
+
+trap helm_init_abort 2
+
+helm_git_clone 
