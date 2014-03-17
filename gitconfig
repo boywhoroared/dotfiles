@@ -410,7 +410,7 @@
   mnemonicprefix = true
 
 [push]
-  default = "simple"
+  default = "current"
 
 [commit]
   template = ~/.gitmessage
