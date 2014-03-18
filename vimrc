@@ -13,7 +13,7 @@ set encoding=utf-8
 " VUNDLE {{{
 " Vim plugin manager
 
-if version >= 703
+if version >= 702
   filetype off
 
   set rtp+=$MYVIM/bundle/vundle
