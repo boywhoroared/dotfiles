@@ -17,7 +17,20 @@
 
 REPO=$1
 BRANCH=$2
-WORK_DIR="$HELM_UI_DIR/$BRANCH"
+
+if [[ -z $REPO ]]
+then
+  echo "Error: No repository specified."
+  exit 1
+fi
+
+if [[ -n $BRANCH ]]
+then
+  WORK_DIR="$HELM_UI_DIR/$BRANCH"
+else
+  WORK_DIR="$HELM_UI_DIR/$REPO"
+fi
+
 URL="$HELM_GIT_URL/$REPO.git"
 
 function helm_init_abort() {
@@ -27,14 +40,14 @@ function helm_init_abort() {
 }
 
 function _check_env() {
-  if [ -z $HELM_UI_DIR ]
+  if [[ -z $HELM_UI_DIR ]]
   then
     echo '$HELM_UI_DIR is empty. Please set the path to your UI directory.'
     echo 'Usually, you can set it to $SPUIDIR or /data/webdev/$USER'
     exit 1;
   fi
 
-  if [ -z $HELM_GIT_URL ]
+  if [[ -z $HELM_GIT_URL ]]
   then
     echo '$HELM_GIT_URL is empty. Please set the URL to the UI git server.'
     exit 1;
@@ -62,7 +75,7 @@ function branch_exists() {
 }
 
 function helm_git_clone() {
-  if [ ! -d $WORK_DIR ]
+  if [[ ! -d $WORK_DIR ]]
   then
     echo "==> Create work directory $WORK_DIR ..."
     mkdir $WORK_DIR
@@ -80,12 +93,23 @@ function helm_git_clone() {
     echo "==> Fetch submodules..."
     git submodule update --init
     # create the ticket branch
-    if $(branch_exists origin $BRANCH)
+    if [[ -n $BRANCH ]] 
     then
-      # checkout existing branch
-      echo "==> Fetch $BRANCH from origin..."
-      git fetch origin $BRANCH
-      git checkout $BRANCH
+      if $(branch_exists "origin" "$BRANCH")
+      then
+        # checkout existing branch
+        echo "==> Fetch $BRANCH from origin..."
+        git fetch origin $BRANCH
+        git checkout $BRANCH
+      else
+        # create the remote branch, then create a local tracking branch
+        echo "==> Create $BRANCH..."
+        git push origin HEAD:refs/heads/$BRANCH
+        git fetch origin $BRANCH
+        git branch --track $BRANCH origin/$BRANCH
+        cd $WORK_DIR
+        git checkout $BRANCH
+      fi
     else
       # create the remote branch, then create a local tracking branch
       echo "==> Create $BRANCH..."
@@ -94,6 +118,7 @@ function helm_git_clone() {
       git branch --track origin/$BRANCH $BRANCH
       cd $WORK_DIR
       git checkout $BRANCH
+      echo "==> Done"
     fi
   else
     echo "Error: $URL does not exist or is inaccessible.";
