@@ -31,7 +31,7 @@ function prompt_user_host() {
 if command -v brew -v 2>/dev/null; then
 	GIT_PROMPT="$(brew --prefix git)/etc/bash_completion.d/git-prompt.sh"
 else
-	GIT_PROMPT="~/etc/bash/git-prompt.sh"
+	GIT_PROMPT="$HOME/etc/bash/git-prompt.sh"
 fi
 [ -r "$GIT_PROMPT" ] && [ -f "$GIT_PROMPT" ] && source "$GIT_PROMPT"
 
