@@ -91,7 +91,7 @@ function helm_git_clone() {
       echo "==> Create $BRANCH..."
       git push origin HEAD:refs/heads/$BRANCH
       git fetch origin $BRANCH
-      git branch --track $branch origin/$BRANCH
+      git branch --track origin/$BRANCH $BRANCH
       cd $WORK_DIR
       git checkout $BRANCH
     fi
