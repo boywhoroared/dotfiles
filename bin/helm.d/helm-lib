@@ -67,7 +67,7 @@ prompt_ask() {
 # GIT {{{
 git_repo_exists() {
   git ls-remote $1 &>/dev/null
-  if [ $? = 0 ]
+  if [ $? -eq 0 ]
   then
     echo 1
   else
@@ -76,12 +76,12 @@ git_repo_exists() {
 }
 
 git_branch_exists() {
-  git ls-remote --heads --exit-code $1 $2
+  git ls-remote --heads --exit-code $1 $2 &>/dev/null
   if [ $? -eq 2 ]
   then
-    echo 1
-  else
     echo 0
+  else
+    echo 1
   fi
 }
 # }}}
