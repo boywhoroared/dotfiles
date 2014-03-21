@@ -73,21 +73,21 @@ function helm_git_clone() {
     mkdir $WORK_DIR
   fi
 
-  if [ $(git_repo_exists $URL) ]
+  if [ $(git_repo_exists $URL) -eq 1 ]
   then
     # imitate git clone, but only fetch & track master
     msg_notice "Create local repo ..."
     cd $WORK_DIR
     git init
     msg_notice "Add master at $URL ..."
-    git remote add -f -t master -m master origin $URL
-    git checkout master
+    git remote add -m master origin $URL
+    # git checkout master
     msg_notice "Fetch submodules ..."
     git submodule update --init
     # create the ticket branch
     if [[ -n $BRANCH ]] 
     then
-      if $(git_branch_exists "origin" "$BRANCH")
+      if [ $(git_branch_exists "origin $BRANCH") -eq 1 ]
       then
         # checkout existing branch
         msg_notice "Fetch $BRANCH from origin..."
@@ -98,9 +98,9 @@ function helm_git_clone() {
         msg_notice "Create $BRANCH..."
         git push origin HEAD:refs/heads/$BRANCH
         git fetch origin $BRANCH
-        git branch --track $BRANCH origin/$BRANCH
+        git branch --track origin/$BRANCH $BRANCH
         cd $WORK_DIR
-        git checkout $BRANCH
+        # git checkout $BRANCH
       fi
     fi
   else
