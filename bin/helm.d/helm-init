@@ -67,42 +67,49 @@ function _check_env() {
 }
 
 function helm_git_clone() {
-  if [[ ! -d $WORK_DIR ]]
+  if [[ $(git_repo_exists $URL) -eq 1 ]] 
   then
-    msg_notice "Create work directory $WORK_DIR ..."
-    mkdir $WORK_DIR
-  fi
 
-  if [ $(git_repo_exists $URL) -eq 1 ]
-  then
-    # imitate git clone, but only fetch & track master
+    # create the working directory
+    if [[ ! -d $WORK_DIR ]]
+    then
+      msg_notice "Create work directory $WORK_DIR ..."
+      mkdir $WORK_DIR
+    fi
+
+    # create the repo with master
     msg_notice "Create local repo ..."
     cd $WORK_DIR
+
     git init
     msg_notice "Add master at $URL ..."
-    git remote add -m master origin $URL
-    # git checkout master
-    msg_notice "Fetch submodules ..."
-    git submodule update --init
-    # create the ticket branch
+    git remote add -f -m master origin $URL
+
+    # setup ticket branch
     if [[ -n $BRANCH ]] 
     then
-      if [ $(git_branch_exists "origin $BRANCH") -eq 1 ]
+      if [[ $(git_branch_exists "origin $BRANCH") -eq 0 ]]
       then
-        # checkout existing branch
-        msg_notice "Fetch $BRANCH from origin..."
-        git fetch origin $BRANCH
-        git checkout $BRANCH
-      else
         # create the remote branch, then create a local tracking branch
-        msg_notice "Create $BRANCH..."
-        git push origin HEAD:refs/heads/$BRANCH
-        git fetch origin $BRANCH
-        git branch --track origin/$BRANCH $BRANCH
-        cd $WORK_DIR
-        # git checkout $BRANCH
+        msg_notice "Create $BRANCH remotely..."
+        git push origin origin:refs/heads/$BRANCH
       fi
+
+      # checkout existing branch
+      msg_info "Add remote for: origin $BRANCH ..."
+      git remote set-branches --add origin $BRANCH 
+      msg_info "Fetch: origin $BRANCH ..."
+      git fetch origin $BRANCH
+      # msg_info "Create local tracking $BRANCH ..."
+      # git branch -t "origin/$BRANCH" $BRANCH
+      msg_info "Checkout $BRANCH ..."
+      git checkout $BRANCH
+    else
+      git fetch origin master
     fi
+
+    # fetch submodules
+    # git submodule update --init
   else
     msg_error "$URL does not exist or is inaccessible.";
     exit 1;
