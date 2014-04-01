@@ -1,0 +1,2 @@
+# Generate the Esc key when Left Control is pressed and released on it's own.
+xcape -e 'Control_L=Escape' -t 300
