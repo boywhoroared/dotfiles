@@ -1,6 +1,6 @@
 # basic install 
-ln -sFi ~/.dotfiles/bin ~/bin
-ln -sFi ~/.dotfiles/etc ~/etc 
+ln -sFi ~/.dotfiles/bin ~/.bin
+ln -sFi ~/.dotfiles/etc ~/.etc
 ln -sFi ~/.dotfiles/aliases ~/.aliases
 ln -sFi ~/.dotfiles/env ~/.env
 ln -sFi ~/.dotfiles/bash_prompt ~/.bash_prompt
