@@ -166,6 +166,10 @@
   #
   pr = pull --rebase
 
+  # Badass git pull alias (up) to show commit log that just got pulled in addition to changes
+  # https://gist.github.com/kneath/249223
+  up = !sh -c 'git pull --rebase --prune && git log --pretty=format:\"%Cred%ae %Creset- %C(yellow)%s %Creset(%ar)\" HEAD@{1}..'
+
   # rebase - forward-port local commits to the updated upstream head.
   rb = rebase
 
