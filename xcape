@@ -1,2 +1,7 @@
-# Generate the Esc key when Left Control is pressed and released on it's own.
-xcape -e 'Control_L=Escape' -t 300
+# SpaceCadet
+# http://stevelosh.com/blog/2012/10/a-modern-space-cadet/#better-shifting
+
+# Control Esc - Left Control sends Esc when tapped alone; Behaves normal in key
+# combos. (Happy Vim-ing)
+# Better Shifting - Left & Right Shifts send Left & Right Parentheses
+xcape -e 'Control_L=Escape;Shift_L=parenleft;Shift_R=parenright' -t 300
