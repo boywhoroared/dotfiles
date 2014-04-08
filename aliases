@@ -9,6 +9,8 @@ alias ....="cd ../../.."
 alias cdd="cd -"
 alias mkdir="mkdir -p"
 
+alias projects="cd $PROJECTS"
+
 alias l='ls -f'
 alias ll='ls -aAplhF'
 alias lh='ls -Alh'

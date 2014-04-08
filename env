@@ -12,3 +12,8 @@ if [ "$TERM" == "xterm" ]; then
     export TERM=xterm-256color
 fi
 
+# Local executables
+PATH=$HOME/.local/bin:$HOME/.bin:$PATH
+export PATH
+
+PROJECTS="$HOME/Projects"
