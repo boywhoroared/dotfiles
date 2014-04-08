@@ -1,4 +1,5 @@
 " CtrlP
+let g:ctrlp_map = '<Leader>p'
 let g:ctrlp_working_path_mode = 0
 let g:ctrlp_match_window_reversed = 1
 let g:ctrlp_max_height = 20
@@ -13,13 +14,15 @@ if executable('ag')
 endif
 
 " Easy Buffer 
-nmap <Leader>. :EasyBuffer<CR>
+nmap <Leader>l :EasyBuffer<CR>
 
 " NERDTree
 nmap <Leader>m :Explore<CR>
 
+" Tagbar
+nmap <Leader>t :TagbarToggle<CR>
+
 " Syntastic
-let g:syntastic_phpcs_conf="--warning-severity=0 --standard=/data/ese/ruleset.xml"
 
 " SQLComplete: GEEZUS H CHRIST.
 let g:omni_sql_no_default_maps = 1
@@ -30,4 +33,8 @@ let g:gitgutter_enabled = 0
 " Syntastic
 let g:syntastic_check_on_open=0
 let g:syntastic_auto_loc_list=1
+let g:syntastic_php_phpcs_args='-n '
+
+
+
 

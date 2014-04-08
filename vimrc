@@ -223,8 +223,9 @@ set shiftround
 set foldlevelstart=0
 
 " Space to toggle folds.
-nnoremap <Space> za
-vnoremap <Space> za
+" (Space is our leader, so double tap)
+nnoremap <Leader><Space> za
+vnoremap <Leader><Space> za
 
 " Make zO recursively open whatever top level fold we're in, no matter where the
 " cursor happens to be.
@@ -317,8 +318,8 @@ augroup END
 "}}}
 
 " Mappings {{{
-let mapleader = ","
-let maplocalleader= "\\"
+let mapleader = " "
+let maplocalleader= "-"
 
 nnoremap j gj
 nnoremap k gk
