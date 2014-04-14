@@ -4,7 +4,7 @@
 # Configure screen outputs. Useful for multihead configs. 
 # https://wiki.archlinux.org/index.php/Xrandr#Configuration
 
-IN="LVSD1"
+IN="LVDS1"
 EXT="VGA1"
 
 if (xrandr | grep "$EXT connected"); then
@@ -12,6 +12,6 @@ if (xrandr | grep "$EXT connected"); then
   xrandr --output $EXT --left-of $IN
 
   ## external screen is my primary monitor
-  xrandr --output $EXT --primary $IN
+  xrandr --output $EXT --primary
 fi
 
