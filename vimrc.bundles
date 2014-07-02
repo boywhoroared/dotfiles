@@ -25,6 +25,7 @@ Bundle 'kurkale6ka/vim-pairs'
 Bundle 'zaiste/tmux.vim'
 Bundle 'tpope/vim-dispatch'
 Bundle 'wellle/targets.vim'
+Bundle 'chrisbra/NrrwRgn'
 
 " Git
 Bundle 'tpope/vim-fugitive'
@@ -61,5 +62,5 @@ Bundle 'zenorocha/dracula-theme', {'rtp': 'vim/'}
 Bundle 'endel/vim-github-colorscheme'
 Bundle 'w0ng/vim-hybrid'
 Bundle 'cocopon/iceberg.vim'
-Bundle 'chrisbra/NrrwRgn'
+Bundle 'itchyny/landscape.vim'
 
