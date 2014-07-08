@@ -26,6 +26,8 @@ Bundle 'zaiste/tmux.vim'
 Bundle 'tpope/vim-dispatch'
 Bundle 'wellle/targets.vim'
 Bundle 'chrisbra/NrrwRgn'
+Bundle 'junegunn/goyo.vim'
+Bundle 'junegunn/limelight.vim'
 
 " Git
 Bundle 'tpope/vim-fugitive'
@@ -63,4 +65,5 @@ Bundle 'endel/vim-github-colorscheme'
 Bundle 'w0ng/vim-hybrid'
 Bundle 'cocopon/iceberg.vim'
 Bundle 'itchyny/landscape.vim'
+Bundle 'mgutz/vim-colors'
 
