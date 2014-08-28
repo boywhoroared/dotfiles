@@ -31,6 +31,7 @@ Bundle 'junegunn/limelight.vim'
 
 " Git
 Bundle 'tpope/vim-fugitive'
+Bundle 'rhysd/committia.vim'
 
 " Languages
 Bundle 'jelera/vim-javascript-syntax'
@@ -66,4 +67,6 @@ Bundle 'w0ng/vim-hybrid'
 Bundle 'cocopon/iceberg.vim'
 Bundle 'itchyny/landscape.vim'
 Bundle 'mgutz/vim-colors'
+Bundle 'romainl/Apprentice'
+Bundle 'romainl/Disciple'
 
