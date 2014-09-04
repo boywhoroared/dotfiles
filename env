@@ -1,6 +1,6 @@
 export VISUAL="mvim"
 export EDITOR="vim"
-export MANPAGER="/bin/sh -c \"col -b | vim -c 'set ft=man ts=8 nomod nolist nonu noma' -\""
+#export MANPAGER="/bin/sh -c \"col -b | vim -c 'set ft=man ts=8 nomod nolist nonu noma' -\""
 export TERM=xterm-256color
 export LC_CTYPE="en_US.UTF-8"
 export LC_ALL="en_US.UTF-8"
@@ -17,3 +17,9 @@ PATH=$HOME/.local/bin:$HOME/.bin:$PATH
 export PATH
 
 PROJECTS="$HOME/Projects"
+
+# spui + Helm
+export SPUIDIR="$PROJECTS/northernlight"
+export HELM_UI_DIR=${SPUIDIR:-"/data/webdev/$USER"}
+export HELM_GIT_URL=${HELM_GIT_URL:-"git@gitlab.stratus.northernlight.com:ui"}
+export HELM_GIT_CONFIG="helm"
