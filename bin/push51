@@ -1,0 +1,11 @@
+#!/bin/bash
+username=mparris
+
+# go to the project directory root from git.
+cd "$(git rev-parse --show-toplevel)"
+
+# get the name of the current directory
+dirname=${PWD##*/} 
+
+# sync!
+rsync -rcltDzv --no-perms --exclude="conf" --exclude="logs" --exclude="tmp" --exclude=".git" . "webdev51:/data/webdev/$username/$dirname"
