@@ -10,24 +10,21 @@ endif
 let &termencoding = &encoding
 set encoding=utf-8
 
-" VUNDLE {{{
+" PLUGINS {{{
 " Vim plugin manager
 
 if version >= 702
   filetype off
 
-  set rtp+=$MYVIM/bundle/vundle
-  call vundle#rc()
+  let $PLUGINS = $MYVIMRC.'.bundles'
+  let $PLUGINS_LOCAL = $MYVIMRC.'.bundles.local'
 
-  let $VUNDLE_BUNDLES = $MYVIMRC.'.bundles'
-  let $VUNDLE_BUNDLES_LOCAL = $MYVIMRC.'.bundles.local'
-
-  if filereadable($VUNDLE_BUNDLES)
-    source $VUNDLE_BUNDLES
+  if filereadable($PLUGINS)
+    source $PLUGINS
   endif
 
-  if filereadable($VUNDLE_BUNDLES_LOCAL)
-    source $VUNDLE_BUNDLES_LOCAL
+  if filereadable($PLUGINS_LOCAL)
+    source $PLUGINS_LOCAL
   endif
 
 endif
