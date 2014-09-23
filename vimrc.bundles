@@ -1,4 +1,4 @@
-call plug#begin('./.vim/bundles')
+call plug#begin('~/.vim/bundles')
 
 Plug 'troydm/easybuffer.vim'
 Plug 'kien/ctrlp.vim'
