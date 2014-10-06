@@ -1,4 +1,4 @@
-call plug#begin('~/.vim/bundles')
+call plug#begin('~/.vim/bundle')
 
 Plug 'troydm/easybuffer.vim'
 Plug 'kien/ctrlp.vim'
@@ -49,7 +49,7 @@ Plug 'plasticboy/vim-markdown'
 Plug 'nelstrom/vim-markdown-folding'
 Plug 'Rykka/riv.vim'
 Plug 'groenewege/vim-less'
-Plug 'hail2u/vim-css3-syntax.git'
+Plug 'hail2u/vim-css3-syntax'
 Plug 'exu/pgsql.vim'
 
 " Colorschemes 
@@ -76,5 +76,6 @@ Plug 'hmaarrfk/vim-colors-solarized'
 Plug 'nanotech/jellybeans.vim'
 Plug 'noahfrederick/vim-hemisu'
 Plug 'jonathanfilip/vim-lucius'
+Plug 'whatyouhide/vim-gotham'
 
 call plug#end()
