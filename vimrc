@@ -176,7 +176,7 @@ set title
 set ttyfast
 set notimeout
 set ttimeout
-set ttimeoutlen=50
+set ttimeoutlen=30
 
 " }}}
 " 9 USING THE MOUSE {{{
