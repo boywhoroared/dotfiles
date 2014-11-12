@@ -76,5 +76,6 @@ Plug 'nanotech/jellybeans.vim'
 Plug 'noahfrederick/vim-hemisu'
 Plug 'jonathanfilip/vim-lucius'
 Plug 'whatyouhide/vim-gotham'
+Plug 'vim-scripts/saturn.vim'
 
 call plug#end()
