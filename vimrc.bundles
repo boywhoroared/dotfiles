@@ -28,10 +28,11 @@ Plug 'wellle/targets.vim'
 Plug 'chrisbra/NrrwRgn'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
+Plug 'tpope/vim-capslock'
 
 " Git
 Plug 'tpope/vim-fugitive'
-Plug 'rhysd/committia.vim'
+" Plug 'rhysd/committia.vim'
 
 " Languages
 Plug 'jelera/vim-javascript-syntax'
