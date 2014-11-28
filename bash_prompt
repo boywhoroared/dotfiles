@@ -37,5 +37,6 @@ fi
 
 GIT_PS1_SHOWUPSTREAM="auto"
 GIT_PS1_SHOWCOLORHINTS=1
+GIT_PS1_SHOWSTASHSTATE=1
 PROMPT_COMMAND='__git_ps1 "$(prompt_user_host)\w" "\n\$ "'
 
