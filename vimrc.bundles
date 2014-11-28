@@ -77,5 +77,6 @@ Plug 'noahfrederick/vim-hemisu'
 Plug 'jonathanfilip/vim-lucius'
 Plug 'whatyouhide/vim-gotham'
 Plug 'vim-scripts/saturn.vim'
+Plug 'noahfrederick/vim-noctu'
 
 call plug#end()
