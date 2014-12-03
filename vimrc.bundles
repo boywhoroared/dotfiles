@@ -79,6 +79,5 @@ Plug 'whatyouhide/vim-gotham'
 Plug 'vim-scripts/saturn.vim'
 Plug 'noahfrederick/vim-noctu'
 Plug 'crusoexia/vim-monokai'
-Plug 'joshhartigan/banana'
 
 call plug#end()
