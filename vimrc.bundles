@@ -79,5 +79,12 @@ Plug 'whatyouhide/vim-gotham'
 Plug 'vim-scripts/saturn.vim'
 Plug 'noahfrederick/vim-noctu'
 Plug 'crusoexia/vim-monokai'
+Plug 'tomasr/molokai'
+Plug 'fmoralesc/molokayo'
+Plug 'carlson-erik/wolfpack'
+Plug 'vim-scripts/oceanlight'
+Plug 'vim-scripts/oceandeep'
+Plug 'daylerees/colour-schemes', {'rtp': 'vim/'}
+Plug 'thinkpixellab/flatland', {'rtp': 'vim/'}
 
 call plug#end()
