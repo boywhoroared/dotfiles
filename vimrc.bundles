@@ -29,6 +29,7 @@ Plug 'chrisbra/NrrwRgn'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
 Plug 'tpope/vim-capslock'
+Plug 'vim-voom/VOoM', { 'on':  'Voom' }
 
 " Git
 Plug 'tpope/vim-fugitive'
@@ -61,30 +62,26 @@ Plug 'morhetz/gruvbox'
 Plug 'chriskempson/base16-vim'
 Plug 'marcelbeumer/spacedust.vim'
 Plug 'reedes/vim-colors-pencil'
-Plug 'zenorocha/dracula-theme', {'rtp': 'vim/'}
 Plug 'endel/vim-github-colorscheme'
 Plug 'w0ng/vim-hybrid'
 Plug 'cocopon/iceberg.vim'
 Plug 'itchyny/landscape.vim'
-Plug 'mgutz/vim-colors'
 Plug 'romainl/Apprentice'
 Plug 'romainl/Disciple'
-Plug 'alem0lars/vim-colorscheme-darcula'
 Plug 'baskerville/bubblegum'
 Plug 'hmaarrfk/vim-colors-solarized'
 Plug 'nanotech/jellybeans.vim'
 Plug 'noahfrederick/vim-hemisu'
 Plug 'jonathanfilip/vim-lucius'
 Plug 'whatyouhide/vim-gotham'
-Plug 'vim-scripts/saturn.vim'
-Plug 'noahfrederick/vim-noctu'
-Plug 'crusoexia/vim-monokai'
 Plug 'tomasr/molokai'
 Plug 'fmoralesc/molokayo'
 Plug 'carlson-erik/wolfpack'
 Plug 'vim-scripts/oceanlight'
 Plug 'vim-scripts/oceandeep'
-Plug 'daylerees/colour-schemes', {'rtp': 'vim/'}
 Plug 'thinkpixellab/flatland', {'rtp': 'vim/'}
+Plug 'andrwb/vim-lapis256'
+Plug 'GertjanReynaert/cobalt2-vim-theme'
+Plug 'ajh17/Spacegray.vim'
 
 call plug#end()
