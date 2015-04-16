@@ -1,0 +1,7 @@
+# Local executables
+PATH=$HOME/.local/bin:$HOME/.bin:$PATH
+
+# Add RVM to PATH for scripting
+PATH="$PATH:$HOME/.rvm/bin"
+
+export PATH
