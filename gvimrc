@@ -1,6 +1,6 @@
 if has('mac')
-  set guifont=Meslo\ LG\ M:h14
-  "set guifont=Source\ Code\ Pro:h14
+  " set guifont=Meslo\ LG\ M:h14
+  set guifont=Source\ Code\ Pro:h15
 elseif has('gui_gtk2')
   set guifont=Droid\ Sans\ Mono\ 13
   colo base16-ocean
@@ -17,3 +17,11 @@ set guicursor=n-v-c:block-Cursor/lCursor,ve:ver35-Cursor,o:hor50-Cursor,i-ci:ver
 " set guicursor+=i:ver100-iCursor
 " set guicursor+=n-v-c:blinkon0
 " set guicursor+=i:blinkwait10
+"
+
+" Quick Fonts
+menu Fonts.Source\ Code\ Pro :set guifont=Source\ Code\ Pro:h16<CR>
+menu Fonts.Ubuntu\ Mono :set guifont=Ubuntu\ Mono:h18<CR>
+menu Fonts.Consolas :set guifont=Consolas:h16<CR>
+menu Fonts.Inconsolata :set guifont=Inconsolata:h18<CR>
+menu Fonts.Pragmata\ Pro :set guifont=Pragmata\ Pro:h16<CR>
