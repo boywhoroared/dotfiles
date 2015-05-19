@@ -20,17 +20,18 @@ Plug 'tpope/vim-characterize'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-capslock'
+Plug 'Soares/tabloid.vim'
 
 Plug 'vim-scripts/greplace.vim'
 Plug 'rking/ag.vim'
+Plug 'osyo-manga/vim-over'
 
-Plug 'kana/vim-smartinput'
+Plug 'jiangmiao/auto-pairs'
 Plug 'vim-scripts/matchit.zip'
 Plug 'kurkale6ka/vim-pairs'
 Plug 'wellle/targets.vim'
 
 Plug 'vim-scripts/Align'
-Plug 'Soares/tabloid.vim'
 Plug 'godlygeek/tabular'
 
 Plug 'reedes/vim-wordy'
@@ -39,6 +40,7 @@ Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
 Plug 'vim-voom/VOoM', { 'on':  'Voom' }
 Plug 'whatyouhide/vim-lengthmatters'
+Plug 'mbbill/undotree'
 
 " Git
 Plug 'tpope/vim-fugitive'
@@ -95,8 +97,14 @@ Plug 'whatyouhide/vim-gotham'
 Plug 'vim-scripts/oceanlight'
 Plug 'vim-scripts/oceandeep'
 Plug 'thinkpixellab/flatland', {'rtp': 'vim/'}
+Plug 'jordwalke/flatlandia'
 Plug 'ajh17/Spacegray.vim'
-Plug 'boywhoroared/vim-mac-classic-theme'
-Plug 'boywhoroared/plum.vim'
+Plug 'boywhoroared/vim-colors-mac_classic'
+"Plug 'boywhoroared/vim-colors-plum'
+Plug 'boywhoroared/vim-colors-codeschool'
 Plug 'tpope/vim-vividchalk'
+Plug 'henrybw/vim-colors-aurora'
+Plug 'keith/parsec.vim'
+Plug 'zenorocha/dracula-theme', {'rtp': 'vim/'}
+
 call plug#end()
