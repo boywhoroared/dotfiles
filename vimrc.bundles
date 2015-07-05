@@ -7,7 +7,7 @@ Plug 'junegunn/vim-peekaboo'
 Plug 'mbbill/undotree'
 
 " Code Completion
-Plug 'SirVer/ultisnips', { 'for': ['php', 'python', 'javascript', 'html'] }
+Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'ajh17/VimCompletesMe'
 
