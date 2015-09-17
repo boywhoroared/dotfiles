@@ -15,6 +15,8 @@ setlocal expandtab
 setlocal autoindent
 setlocal smarttab
 
+let g:php_folding=1
+
 " Setup better matching for short syntax.
 let b:match_words = '\<if\>:\<elseif\>:\<else\>:\<endif\>,'
       \ . '\<foreach\>:\<endforeach\>,'
