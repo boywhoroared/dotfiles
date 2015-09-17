@@ -48,8 +48,7 @@ Plug 'tpope/vim-fugitive'
 " PHP
 Plug 'StanAngeloff/php.vim', { 'for': 'php' }
 Plug 'shawncplus/phpcomplete.vim', { 'for': 'php' }
-"Plug 'vim-php/tagbar-phpctags.vim'
-Plug 'rayburgemeestre/phpfolding.vim', { 'for': 'php' }
+Plug 'vim-php/tagbar-phpctags.vim', { 'for': 'php' }
 Plug '2072/PHP-Indenting-for-VIm', { 'for': 'php' }
 
 " Javascript
