@@ -347,9 +347,9 @@ nnoremap S i<cr><esc>^mwgk:silent! s/\v +$//<cr>:noh<cr>`w
 " http://danielmiessler.com/blog/using-jk-vs-jj-for-esc-remapping-in-vim-steve-losh
 inoremap jk <Esc>
 
-" Quick Save. 
+" Quick Save.
 nmap <Leader>w :w<CR>
-nmap <Leader>ww :w!<CR>
+nmap <Leader>W :w!<CR>
 
 " Missing ZZ and ZQ counterparts:
 " quick save-buffer and quit-everything
