@@ -121,8 +121,10 @@ if &term =~ '256color'
 endif
 
 syntax on
+let g:seoul256_light_background=256
+let g:seoul256_background=236
 set bg=dark
-colorscheme badwolf
+colorscheme seoul256
 
 if version >= 703
   " show a column marker for line length. text SHOULD not go past this
