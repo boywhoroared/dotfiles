@@ -1,0 +1,9 @@
+# Load any supplementary scripts
+if [[ -d $HOME/.bashrc.d ]] ; then
+    for bashrc in "$HOME"/.bashrc.d/*.bash ; do
+        if [[ -e $bashrc ]] ; then
+            source "$bashrc"
+        fi
+    done
+    unset -v bashrc
+fi
