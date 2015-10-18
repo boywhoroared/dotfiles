@@ -1,3 +1,10 @@
+# Load Profile
+if [[ -e "$HOME/.profile" ]]; then
+  source "$HOME/.profile"
+fi
+
+# Completion
+
 # Autoload functions
 if [[ -d "$HOME/.zshrc/functions" ]]; then
     fpath=("$HOME/.zshrc/functions" $fpath)
