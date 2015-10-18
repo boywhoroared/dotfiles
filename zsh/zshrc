@@ -1,0 +1,66 @@
+# Autoload functions
+if [[ -d "$HOME/.zshrc/functions" ]]; then
+    fpath=("$HOME/.zshrc/functions" $fpath)
+fi
+
+# Completion
+# Add basic completion and try to complete with errors (fixes/guesses from error)
+zstyle ':completion:*' completer _complete _ignored _approximate
+# Attempt glob expansion
+zstyle ':completion:*' glob 1
+# Colour commands/completions like LS_COLORs
+zstyle ':completion:*' list-colors ''
+# Apply match control syntax globally
+zstyle ':completion:*' matcher-list '' 'm:{[:lower:]}={[:upper:]}'
+
+zstyle :compinstall filename '~/.zshrc'
+
+# -z use zsh when loading functions
+# -U required for compiled zsh .zwc functions
+autoload -Uz compinit 
+compinit
+
+# Load the zsh themes/prompt system
+autoload -U promptinit && promptinit
+
+# Options
+# man zshoptions
+# https://developer.apple.com/library/mac/documentation/Darwin/Reference/ManPages/man1/zshoptions.1.html
+
+# Use vim bindings
+bindkey -v
+setopt VI # only used if using ZLE; prefer bindkey -v
+
+# Use extended glob; Example /path/**/dir to search recursively
+setopt EXTENDED_GLOB
+
+# Suggest corrections if I type the wrong command
+setopt CORRECT
+
+# Append session history list to history file, rather than replace
+setopt APPEND_HISTORY
+
+# Perform history expansion
+setopt BANG_HIST
+
+# Do not add a command line to the history if it is a duplicate of a previous event
+setopt HIST_IGNORE_ALL_DUPS
+
+# Do not add a command line to the history if it begins with a space
+setopt HIST_IGNORE_SPACE
+
+# Do not store calls to history in the history
+setopt HIST_NO_STORE
+
+# Remove superfluous blanks from the command line before saving to history
+setopt HIST_REDUCE_BLANKS
+
+# Load all supplementary scripts in ~/.zshrc.d
+if [ -d "$HOME"/.zshrc.d ] ; then
+    for zshrc in "$HOME"/.zshrc.d/*.zsh ; do
+        if [ -e "$zshrc" ] ; then
+            source "$zshrc"
+        fi
+    done
+    unset -v zshrc
+fi
