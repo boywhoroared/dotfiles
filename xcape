@@ -1,7 +1,0 @@
-# SpaceCadet
-# http://stevelosh.com/blog/2012/10/a-modern-space-cadet/#better-shifting
-
-# Control Esc - Left Control sends Esc when tapped alone; Behaves normal in key
-# combos. (Happy Vim-ing)
-# Better Shifting - Left & Right Shifts send Left & Right Parentheses
-xcape -e 'Control_L=Escape;Shift_L=Shift_L|9;Shift_R=Shift_R|0' -t 300
