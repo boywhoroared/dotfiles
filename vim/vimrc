@@ -1,0 +1,180 @@
+
+" Use vim's more sensible default settings; Do not try to be vi
+" NOTE: vim sets nocompatible if it loads a vimrc, so this isn't necessary.
+" set nocompatible
+"
+
+" UTF-8 everywhere.
+if has('multi_byte')
+  set encoding=utf-8
+endif
+
+" Make backspacing in Insert Mode sane: allow backspacing over autoindent,
+" linebreaks, and the start of insert.
+" See :h 'backspace' 
+set backspace=indent,eol,start
+
+" Allow the cursor go anywhere -- places without text -- in Visual Block mode.
+" Makes it easier to select blocks.
+if has('virtualedit')
+  set virtualedit+=block
+endif
+
+" Use the indenting of the *current* line when *starting a new line*
+set autoindent
+if has('smartindent')
+  " See :h smartindent
+  "set smartindent
+endif
+
+" Use spaces instead of tabs
+set expandtab
+
+" Indent with four spaces when an indent operation is used
+set shiftwidth=4
+
+" Insert four spaces when Tab is pressed
+set softtabstop=4
+
+" How many spaces to show for a literal tab when 'list' is unset
+set tabstop=4
+
+" Indent intelligently to 'shiftwidth' at the starts of lines with Tab, but
+" use 'tabstop' everywhere else
+set smarttab
+
+" When indenting lines with < or >, round the indent to a multiple of
+" 'shiftwidth', so even if the line is indented by one space it will indent
+" up to 4 and down to 0, for example
+set shiftround
+
+" = Format Options
+
+" Automatically use comment markers when starting a new line if the current
+" line is a comment
+set formatoptions+=roq
+"
+" If we can, add j to the format options to get rid of comment leaders when
+" joining lines
+if v:version > 703 || v:version == 703 && has('patch541')
+  set formatoptions+=j
+endif
+
+" Nice formatting for prose (lists and paragraphs).
+set formatoptions+=1l2n
+
+" Use the tilde -- switch case of text under cursor -- as an operator with motions,
+" rather than just swapping the  case of the character under the cursor
+set tildeop
+
+" Keep changed buffers without forcing me to save them. We can jump from file to
+" file without having to read/write the file.
+"
+" WARNING: Be careful using q!; You'll get no warnings from unsaved hidden
+" buffers.
+"
+" See :h hidden 
+"     :h buffer-hidden
+"     :h abandon
+" TODO: Try life without this option
+if exists("+listcmds")
+  set hidden
+endif
+
+" When switching buffers, try to use the first open window or tab with that
+" buffer
+if v:version >= 701
+  set switchbuf=useopen,usetab,split
+else
+  set switchbuf=useopen
+endif
+
+" TODO: The default behaviour might be better; try it.
+if exists("+windows")
+  " New windows appear below, or to the right of, the current window.
+  " The default is above, or to the left of.
+  set splitbelow
+  set splitright
+
+  set noequalalways
+
+endif
+
+" Resize splits when window is resized
+au VimResized * :wincmd =
+
+" Let vim set the terminal title to the name of the file and it's status
+set title
+
+" I have modern terminal
+set ttyfast
+
+" Enable using the mouse in terminals
+set mouse=a
+
+" Do not redraw the screen while executing macros or other automated actions.
+" Just redraw the screen as it is when the operation finishes 
+"set lazyredraw
+
+" Only wait a quarter of second to try to complete a mapping sequence 
+" Example: Given mappings: <Leader>w and <Leader>ww, if you hit <Leader>w,
+" vim will give you 250ms to follow up with the other w for <Leader>ww, or
+" timeout to complete <Leader>w
+set timeout
+set timeoutlen=250
+
+set ttimeout
+set ttimeoutlen=30
+
+" Do not sass me.
+set noerrorbells
+set novisualbell
+set visualbell t_vb=
+
+" Leader Keys
+let mapleader = "\<Space>"
+let maplocalleader= "-"
+
+" Options dependent on the syntax feature
+if has('syntax')
+
+  " Use syntax highlighting
+  syntax enable
+
+  " colourscheme
+  " See also :h background . 'background' does not do what you think it does!
+  silent! colorscheme gotham
+endif
+
+" Remember information about open Buffers when Vim exits
+set viminfo^=%
+
+" Return to last edit position when opening a Buffer
+if has('autocmd')
+  augroup line_return
+      au!
+      au BufReadPost *
+          \ if line("'\"") > 0 && line("'\"") <= line("$") |
+          \     execute 'normal! g`"zvzz' |
+          \ endif
+  augroup END
+endif
+
+" Folds and Scrolls
+set foldlevelstart=0
+
+" Keep 7 lines of context/screen when scrolling vertically
+set scrolloff=7
+set sidescroll=1
+set sidescrolloff=4
+nnoremap <C-e> 7<C-e>
+nnoremap <C-y> 7<C-y>
+vnoremap <C-e> 7<C-e>
+vnoremap <C-y> 7<C-y>
+
+" Set search path for gf, find, sfind, tabfind etc
+" See :h path
+"     :h file-path
+set path+=**
+
+set tags+=./tags
