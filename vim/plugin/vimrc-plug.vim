@@ -65,6 +65,9 @@ Plug 'calebsmith/vim-lambdify', { 'for': ['scheme','racket'] }
 " Python
 Plug 'hdima/python-syntax'
 
+" Go
+Plug 'fatih/vim-go'
+
 " HTML
 Plug 'othree/html5.vim'
 Plug 'othree/xml.vim'
@@ -79,10 +82,10 @@ Plug 'juvenn/mustache.vim'
 Plug 'exu/pgsql.vim'
 
 " Writing
-" Plug 'plasticboy/vim-markdown'
-Plug 'nelstrom/vim-markdown-folding'
-Plug 'vim-pandoc/vim-pandoc', { 'for': 'pandoc' }
-Plug 'vim-pandoc/vim-pandoc-syntax', { 'for': 'pandoc' }
+Plug 'plasticboy/vim-markdown'
+" Plug 'nelstrom/vim-markdown-folding'
+" Plug 'vim-pandoc/vim-pandoc', { 'for': 'pandoc' }
+" Plug 'vim-pandoc/vim-pandoc-syntax', { 'for': 'pandoc' }
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
 Plug 'vim-voom/VOoM', { 'on':  'Voom' }
@@ -116,4 +119,8 @@ Plug 'zenorocha/dracula-theme', {'rtp': 'vim/'}
 "Plug 'Soares/solarized.vim'
 Plug 'NonLogicalDev/vim-jasmine-colortheme'
 Plug 'josephwecker/neutron.vim'
+Plug 'yosiat/oceanic-next-vim'
+Plug 'chmllr/elrodeo-colorscheme'
+Plug 'viniciusban/vim-github-colorscheme'
 call plug#end()
+
