@@ -1,3 +1,6 @@
+
+let $MYVIM=$HOME."/.vim/"
+
 " Use backup features if on a UNIX-like system and not using sudo(8)
 if !strlen($SUDO_USER) && has('unix')
 
