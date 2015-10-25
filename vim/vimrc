@@ -51,6 +51,10 @@ set smarttab
 " up to 4 and down to 0, for example
 set shiftround
 
+" commands for adjusting indentation rules manually
+command! -nargs=1 Spaces execute "setlocal shiftwidth=" . <args> . " softtabstop=" . <args> . " expandtab" | set shiftwidth? softtabstop? expandtab?
+command! -nargs=1 Tabs   execute "setlocal shiftwidth=" . <args> . " softtabstop=" . <args> . " noexpandtab" | set shiftwidth? softtabstop? expandtab?
+
 " = Format Options
 
 " Automatically use comment markers when starting a new line if the current
