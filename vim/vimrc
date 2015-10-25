@@ -1,12 +1,16 @@
 " Use vim's more sensible default settings; Do not try to be vi
 " NOTE: vim sets nocompatible if it loads a vimrc, so this isn't necessary.
-" set nocompatible
-"
+set nocompatible
 
 " UTF-8 everywhere.
 if has('multi_byte')
   set encoding=utf-8
 endif
+
+" Load Plugins with vim-plug
+" NOTE: Tried to place this in plugin/vimrc/plug.vim but some plugins do not 
+" get loaded. Load order does seem to count for this.
+source ~/.vim/Plugfile
 
 " Make backspacing in Insert Mode sane: allow backspacing over autoindent,
 " linebreaks, and the start of insert.
@@ -136,7 +140,6 @@ let maplocalleader= "-"
 
 " Options dependent on the syntax feature
 if has('syntax')
-
   " Use syntax highlighting
   syntax enable
 
