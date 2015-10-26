@@ -52,7 +52,7 @@ Plug 'vim-php/tagbar-phpctags.vim', { 'for': 'php' }
 Plug '2072/PHP-Indenting-for-VIm', { 'for': 'php' }
 
 " Javascript
-Plug 'jelera/vim-javascript-syntax', { 'for': 'javascript' }
+Plug 'othree/yajs.vim', { 'for': 'javascript' }
 Plug 'vim-scripts/JavaScript-Indent', { 'for': 'javascript' }
 Plug 'elzr/vim-json', { 'for': 'json' }
 Plug 'rmanalan/jshint.vim'
