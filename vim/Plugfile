@@ -1,7 +1,7 @@
 call plug#begin('~/.vim/bundle')
 
-Plug 'troydm/easybuffer.vim'
-Plug 'kien/ctrlp.vim'
+" Plug 'troydm/easybuffer.vim'
+" Plug 'kien/ctrlp.vim'
 Plug 'majutsushi/tagbar'
 Plug 'junegunn/vim-peekaboo'
 Plug 'mbbill/undotree'
