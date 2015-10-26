@@ -38,7 +38,7 @@ set report=0
 " Set height of command-line in lines
 set cmdheight=3
 
-if exists('+cmdline_info')
+if has('cmdline_info')
   " Show (partial) command/keystrokes in the bottom of the screen as I type them,
   " or the size of the selected area in visual mode. Don't use this on slow terms. 
   " See :h showcmd
