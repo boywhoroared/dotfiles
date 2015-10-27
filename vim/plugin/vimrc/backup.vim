@@ -13,7 +13,7 @@ if !strlen($SUDO_USER) && has('unix')
   set backupext=.bak
 
   " Keep a version of the file made when the file was opened for editing.
-  set patchmode=.orig
+  "set patchmode=.orig
 
   " Set the directories where vim keeps backups
   set backupdir-=.
@@ -21,7 +21,6 @@ if !strlen($SUDO_USER) && has('unix')
   " The double slash is used to make Vim use the full path to the file in the
   " backup filename. Using this to avoid collisions.
   set backupdir^=$MYVIM/tmp/backup//
-
   set nobackup
 
   if !isdirectory($MYVIM."/tmp/swap") && exists('*mkdir')
