@@ -17,7 +17,7 @@ nnoremap <Leader>l :ls<CR>:b<Space>
 
 " == Juggling Files
 nnoremap <Leader>f :find *
-nnoremap <Leader>s :sfind *
+nnoremap <Leader>fs :sfind *
 nnoremap <Leader>v :vert sfind *
 nnoremap <Leader>t :tabfind *
 
