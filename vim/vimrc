@@ -128,10 +128,10 @@ set mouse=a
 " vim will give you 250ms to follow up with the other w for <Leader>ww, or
 " timeout to complete <Leader>w
 set timeout
-set timeoutlen=250
+set timeoutlen=500
 
 set ttimeout
-set ttimeoutlen=30
+set ttimeoutlen=150
 
 " Do not sass me.
 set noerrorbells
