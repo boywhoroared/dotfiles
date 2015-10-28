@@ -1,0 +1,36 @@
+#!/bin/bash
+
+# See https://github.com/henrik/dotfiles/blob/master/git_template/hooks/pre-commit
+# This runs every hook, tracking which ones failed. 
+
+# This script will run every script it finds in $HOOKNAME.d
+# ...passing along STDIN
+
+# Each git hook is symlinked to this single `hooks`. We get $HOOKNAME will be
+# the name of the symlinked hook because basename of $0 will use the symlink
+# name ;)
+
+HOOKNAME=$(basename $0)
+EXITCODES=()
+
+if [ -d "$GIT_DIR/hooks" ]; then
+    HOOKDIR="${GIT_DIR}/hooks/${HOOKNAME}.d"
+else
+    echo "Couldn't determine hook directory...bailing"
+    exit 1
+fi
+
+# Capture the contents of STDIN so we can pass it to all hooks
+stdin=$(cat /dev/stdin)
+
+for hook in $HOOKDIR/*; do
+    test -x "$hook" || continue
+    echo "Running hook $hook"
+    echo "$stdin" | $hook "$@"
+    EXITCODES+=($?)
+done
+
+# If any exit code isn't 0, bail.
+for exitcode in "${EXITCODES[@]}"; do
+   [ "$exitcode" == 0  ] || exit $exitcode
+done
