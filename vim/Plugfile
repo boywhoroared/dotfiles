@@ -1,7 +1,5 @@
 call plug#begin('~/.vim/bundle')
 
-" Plug 'troydm/easybuffer.vim'
-" Plug 'kien/ctrlp.vim'
 Plug 'majutsushi/tagbar'
 Plug 'junegunn/vim-peekaboo'
 Plug 'mbbill/undotree'
@@ -25,7 +23,6 @@ Plug 'tpope/vim-capslock'
 Plug 'Soares/tabloid.vim'
 
 " Search
-Plug 'vim-scripts/greplace.vim'
 Plug 'wincent/ferret'
 Plug 'osyo-manga/vim-over'
 
@@ -83,12 +80,8 @@ Plug 'exu/pgsql.vim'
 
 " Writing
 Plug 'plasticboy/vim-markdown'
-" Plug 'nelstrom/vim-markdown-folding'
-" Plug 'vim-pandoc/vim-pandoc', { 'for': 'pandoc' }
-" Plug 'vim-pandoc/vim-pandoc-syntax', { 'for': 'pandoc' }
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
-Plug 'vim-voom/VOoM', { 'on':  'Voom' }
 Plug 'reedes/vim-wordy', { 'for': ['markdown', 'text', 'mail', 'asciidoc', 'rst']}
 
 " Tmux
@@ -119,6 +112,5 @@ Plug 'keith/parsec.vim'
 Plug 'josephwecker/neutron.vim'
 Plug 'yosiat/oceanic-next-vim'
 Plug 'chmllr/elrodeo-colorscheme'
-Plug 'viniciusban/vim-github-colorscheme'
 call plug#end()
 
