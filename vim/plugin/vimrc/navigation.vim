@@ -11,6 +11,8 @@ nmap <Leader>p :sfind<Space>
 " http://stackoverflow.com/questions/16082991/vim-switching-between-files-rapidly/16084326#16084326
 " https://www.reddit.com/user/-romainl-
 
+" ALSO READ :h cmdline-completion
+
 " == Juggling Files
 nnoremap <Leader>f :find *
 nnoremap <Leader>fs :sfind *
@@ -29,6 +31,7 @@ nnoremap <Leader>T :tabfind <C-R>=expand('%:h').'/*'<CR>
 " tab completion
 nnoremap <Leader>l :ls<CR>:buffer<Space>
 nnoremap <Leader>ls :ls<CR>:sbuffer<Space>
+nnoremap <Leader>lp :ls<CR>:pwd<CR>:buffer<Space>
 nnoremap gb :ls<CR>:buffer<Space>
 nnoremap gB :ls<CR>:sbuffer<Space>
 
