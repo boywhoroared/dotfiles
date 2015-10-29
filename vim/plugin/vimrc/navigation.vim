@@ -4,10 +4,6 @@
 " mapping. 
 nmap <Leader>p :sfind<Space> 
 
-" List all open buffers, then start the buffer selection command which uses
-" tab completion
-nnoremap <Leader>l :ls<CR>:b<Space>
-
 
 " romainl, the patient vimmer, is my vim spirit animal.
 " See:
@@ -28,11 +24,21 @@ nnoremap <Leader>V :vert sfind <C-R>=expand('%:h').'/*'<CR>
 nnoremap <Leader>T :tabfind <C-R>=expand('%:h').'/*'<CR>
 
 " == Juggling Buffers
+
+" List all open buffers, then start the buffer selection command which uses
+" tab completion
+nnoremap <Leader>l :ls<CR>:buffer<Space>
+nnoremap <Leader>ls :ls<CR>:sbuffer<Space>
+nnoremap gb :ls<CR>:buffer<Space>
+nnoremap gB :ls<CR>:sbuffer<Space>
+
 set wildcharm=<C-z>
 nnoremap <Leader>b :buffer <C-z><S-Tab>
 nnoremap <leader>B :sbuffer <C-z><S-Tab>
 nnoremap ,b :buffer *
 nnoremap ,B :sbuffer *
+
+" Backspace jumps to the last buffer
 nnoremap <BS> <C-^>
 
 " The mappings above list the available buffers in the "wildmenu" with an empty
