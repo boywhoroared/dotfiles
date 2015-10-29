@@ -1,4 +1,6 @@
 call plug#begin('~/.vim/bundle')
+" Learn Vim
+Plug 'dahu/LearnVim'
 
 Plug 'majutsushi/tagbar'
 Plug 'junegunn/vim-peekaboo'
