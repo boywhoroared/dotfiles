@@ -1,10 +1,5 @@
 " = Navigation and Juggling
 
-" Use Vim's built in find rather than CtrlP, but bind it to my old CtrlP
-" mapping. 
-nmap <Leader>p :sfind<Space> 
-
-
 " romainl, the patient vimmer, is my vim spirit animal.
 " See:
 " https://www.reddit.com/r/vim/comments/3o7b4h/can_vim_manage_project_folders/cvuosjy
@@ -55,18 +50,19 @@ nnoremap <PageDown> :bnext<CR>
 
 " == Juggling with Tags/Definitions
 nnoremap <Leader>j :tjump /
+nnoremap <Leader>js :stjump /
 nnoremap <Leader>d :dlist /
 
 " See :h ptjump and :tselect
-nnoremap ,p :ptjump /
+nnoremap <Leader>p :ptjump /
 nnoremap [D [D:djump   <C-r><C-w><S-Left><Left>
 nnoremap ]D ]D:djump   <C-r><C-w><S-Left><Left>
 
 " Juggling with matches
-nnoremap ,i :ilist /
+nnoremap <Leader>i :ilist /
 nnoremap [I [I:ijump   <C-r><C-w><S-Left><Left><Left>
 nnoremap ]I ]I:ijump   <C-r><C-w><S-Left><Left><Left>
 
 " Juggling with changes
-nnoremap ,; *``cgn
-nnoremap ,, #``cgN
+nnoremap <Leader>; *``cgn
+nnoremap <Leader>, #``cgN
