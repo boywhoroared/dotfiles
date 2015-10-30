@@ -185,3 +185,9 @@ set path+=**
 
 set tags+=./tags
 
+" Commands
+
+" Edit and Source my vimrc
+command! EV tabedit $MYVIMRC <bar> lcd %:p:h
+command! SV source  $MYVIMRC
+
