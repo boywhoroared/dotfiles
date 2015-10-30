@@ -1,8 +1,8 @@
 call plug#begin('~/.vim/bundle')
+" Learn Vim
+Plug 'dahu/LearnVim'
 
-Plug 'troydm/easybuffer.vim'
-Plug 'kien/ctrlp.vim'
-Plug 'majutsushi/tagbar'
+"
 Plug 'junegunn/vim-peekaboo'
 Plug 'mbbill/undotree'
 
@@ -25,7 +25,6 @@ Plug 'tpope/vim-capslock'
 Plug 'Soares/tabloid.vim'
 
 " Search
-Plug 'vim-scripts/greplace.vim'
 Plug 'wincent/ferret'
 Plug 'osyo-manga/vim-over'
 
@@ -52,7 +51,7 @@ Plug 'vim-php/tagbar-phpctags.vim', { 'for': 'php' }
 Plug '2072/PHP-Indenting-for-VIm', { 'for': 'php' }
 
 " Javascript
-Plug 'jelera/vim-javascript-syntax', { 'for': 'javascript' }
+Plug 'othree/yajs.vim', { 'for': 'javascript' }
 Plug 'vim-scripts/JavaScript-Indent', { 'for': 'javascript' }
 Plug 'elzr/vim-json', { 'for': 'json' }
 Plug 'rmanalan/jshint.vim'
@@ -64,6 +63,9 @@ Plug 'calebsmith/vim-lambdify', { 'for': ['scheme','racket'] }
 
 " Python
 Plug 'hdima/python-syntax'
+
+" Go
+Plug 'fatih/vim-go'
 
 " HTML
 Plug 'othree/html5.vim'
@@ -79,13 +81,9 @@ Plug 'juvenn/mustache.vim'
 Plug 'exu/pgsql.vim'
 
 " Writing
-" Plug 'plasticboy/vim-markdown'
-Plug 'nelstrom/vim-markdown-folding'
-Plug 'vim-pandoc/vim-pandoc', { 'for': 'pandoc' }
-Plug 'vim-pandoc/vim-pandoc-syntax', { 'for': 'pandoc' }
+Plug 'plasticboy/vim-markdown'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
-Plug 'vim-voom/VOoM', { 'on':  'Voom' }
 Plug 'reedes/vim-wordy', { 'for': ['markdown', 'text', 'mail', 'asciidoc', 'rst']}
 
 " Tmux
@@ -112,8 +110,10 @@ Plug 'boywhoroared/vim-colors-mac_classic'
 Plug 'tpope/vim-vividchalk'
 Plug 'henrybw/vim-colors-aurora'
 Plug 'keith/parsec.vim'
-Plug 'zenorocha/dracula-theme', {'rtp': 'vim/'}
 "Plug 'Soares/solarized.vim'
-Plug 'NonLogicalDev/vim-jasmine-colortheme'
 Plug 'josephwecker/neutron.vim'
+Plug 'yosiat/oceanic-next-vim'
+Plug 'chmllr/elrodeo-colorscheme'
+Plug 'romainl/flattened'
 call plug#end()
+
