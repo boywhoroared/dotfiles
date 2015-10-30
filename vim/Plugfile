@@ -114,5 +114,6 @@ Plug 'keith/parsec.vim'
 Plug 'josephwecker/neutron.vim'
 Plug 'yosiat/oceanic-next-vim'
 Plug 'chmllr/elrodeo-colorscheme'
+Plug 'romainl/flattened'
 call plug#end()
 
