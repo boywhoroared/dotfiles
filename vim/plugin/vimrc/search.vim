@@ -3,7 +3,7 @@ if has('extra_search')
 
   " Searching as I enter my pattern, <Leader>i toggles this
   set incsearch
-  nnoremap <leader>i :set incsearch!<CR>
+  "nnoremap <leader>i :set incsearch!<CR>
 
   " Highlight search results, <Leader>h toggles this
   set hlsearch
