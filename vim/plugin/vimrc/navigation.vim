@@ -59,7 +59,7 @@ nnoremap [D [D:djump   <C-r><C-w><S-Left><Left>
 nnoremap ]D ]D:djump   <C-r><C-w><S-Left><Left>
 
 " Juggling with matches
-nnoremap <Leader>i :ilist /
+nnoremap <Leader>I :ilist /
 nnoremap [I [I:ijump   <C-r><C-w><S-Left><Left><Left>
 nnoremap ]I ]I:ijump   <C-r><C-w><S-Left><Left><Left>
 
