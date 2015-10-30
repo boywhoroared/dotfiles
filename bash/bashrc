@@ -53,7 +53,6 @@ shopt -s cmdhist
 # Case-insensitive globbing (used in pathname expansion)
 shopt -s nocaseglob
 
-# Append to the Bash history file, rather than overwriting it
 # Include dotfiles in pattern matching
 shopt -s dotglob
 
