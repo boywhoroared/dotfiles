@@ -1,11 +1,5 @@
-" Tagbar
-nmap <Leader>t :TagbarToggle<CR>
-
 " SQLComplete: GEEZUS H CHRIST.
 let g:omni_sql_no_default_maps = 1
-
-" GitGutter
-let g:gitgutter_enabled = 0
 
 " Syntastic
 let g:syntastic_check_on_open=0
