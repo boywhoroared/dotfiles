@@ -44,8 +44,30 @@ nnoremap ZW :w!<CR>
 nnoremap ZA :wa!<CR>
 nnoremap ZX :qa<CR>
 
-" Toggle line numbers
-nnoremap <leader>n :setlocal number!<cr>
+if exists('+relativenumber')
+    " Cycle through relativenumber + number, number (only), and no numbers
+    nnoremap <leader>n :<c-r>={
+                \ '00': 'set rnu   <bar> set nu',
+                \ '01': 'set nornu <bar> set nu',
+                \ '10': 'set nornu <bar> set nonu',
+                \ '11': 'set nornu <bar> set nu' }[&nu . &rnu]<cr><cr>
+    
+    " NOTE:
+    " The expression register, <c-r>=, is passed an array of commands.
+    "
+    " Each command corresponds to the current enabled/disabled state of number
+    " and relativenumber.  For example, if both number and relativenumber are
+    " off, we have '00'.  [&nu . &rnu] = 00
+    "
+    " Thus, the expression will evalute to the command to set both nu and rnu
+    " on.
+    "
+    " The first <cr> causes the expression to be evaluated.
+    " The second finishes the command.
+else
+    " Toggle line numbers
+    nnoremap <leader>n :setlocal number!<cr> endif
+endif
 
 " Sort lines
 nnoremap <leader>s vip:!sort<cr>
