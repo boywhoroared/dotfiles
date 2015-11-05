@@ -1,5 +1,5 @@
-# Local executables
-PATH="$HOME/.local/bin:$HOME/.bin:$PATH"
+# HomeBrew
+PATH="/usr/local/sbin:$PATH"
 
 # Node
 PATH="$HOME/.node/bin:$PATH"
@@ -7,8 +7,9 @@ PATH="$HOME/.node/bin:$PATH"
 # Go
 export GOPATH=$HOME/.golang
 export GOROOT=/usr/local/opt/go/libexec
+PATH=$PATH:$GOPATH/bin:$GOROOT/bin
 
-PATH=$PATH:$GOPATH/bin
-PATH=$PATH:$GOROOT/bin
+# Local executables
+PATH="$HOME/.local/bin:$HOME/.bin:$PATH"
 
 export PATH
