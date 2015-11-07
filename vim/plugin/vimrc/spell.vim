@@ -7,7 +7,7 @@ if has('spell')
 
   " Use British English for spelling by default , but bind <Space>su to switch
   " to US English and <Space>sb to switch back
-  set spelllang=en_gb
+  set spelllang=en
   nnoremap <leader>su :setlocal spelllang=en_us<CR>
   nnoremap <leader>sb :setlocal spelllang=en_gb<CR>
 
