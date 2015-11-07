@@ -19,16 +19,19 @@ if has('autocmd')
   nnoremap _xm :setlocal filetype=xml<CR>
 
   if exists("+omnifunc")
-    autocmd FileType php set omnifunc=phpcomplete#CompletePHP
-    autocmd FileType python set omnifunc=pythoncomplete#Complete
-    autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
-    autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
-    autocmd FileType css set omnifunc=csscomplete#CompleteCSS
-    autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
-    autocmd FileType c set omnifunc=ccomplete#Complete
-    autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
+    autocmd FileType php setlocal omnifunc=phpcomplete#CompletePHP
+    autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+    autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+    autocmd FileType html setlocal omnifunc=htmlcomplete#CompleteTags
+    autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+    autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+    autocmd FileType c setlocal omnifunc=ccomplete#Complete
+    autocmd FileType ruby,eruby setlocal omnifunc=rubycomplete#Complete
+    autocmd Filetype *
+                \   if &omnifunc == "" |
+                \       setlocal omnifunc=syntaxcomplete#Complete |
+                \   endif
   endif
-
 endif
 
 
