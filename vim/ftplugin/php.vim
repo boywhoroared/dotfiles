@@ -6,7 +6,7 @@ setlocal errorformat=%m\ in\ %f\ on\ line\ %l
 " Long lines
 setlocal colorcolumn=120
 setlocal textwidth=118
-
+setlocal breakat+="])}"
 
 setlocal tabstop=4
 setlocal softtabstop=4

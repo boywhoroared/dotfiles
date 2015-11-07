@@ -40,4 +40,10 @@ if &listchars ==# 'eol:$'
   endif
 endif
 
-set showbreak=↪ 
+if has('linebreak')
+    set breakindent
+    let &showbreak='↳ '
+    " See :h linebreak
+    "     :h breakindent
+    "     :h breakindentopt
+endif
