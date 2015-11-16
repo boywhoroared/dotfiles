@@ -68,7 +68,7 @@ if v:version > 703 || v:version == 703 && has('patch541')
 endif
 
 " Nice formatting for prose (lists and paragraphs).
-set formatoptions+=1l2n
+set formatoptions+=1ln
 
 " Use the tilde -- switch case of text under cursor -- as an operator with motions,
 " rather than just swapping the  case of the character under the cursor
