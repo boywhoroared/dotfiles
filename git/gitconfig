@@ -1,6 +1,7 @@
 [core]
   editor = vim
   pager = 
+	excludesfile = /Users/mparris/.gitignore_global
 
 [color]
   ui = true
@@ -289,6 +290,9 @@
   # Show the recent day for your own user, suitable for a daily standup meeting.
   log-standup = !git log --since yesterday --author `git config user.email` --pretty=short
 
+  # Show date and subject
+	lld = !git log --date=relative --format="%ad %s"
+
 ## WORKFLOW ALIASES ##
 
   # Stash aliases
@@ -422,5 +426,19 @@
 [include]
   path = .gitconfig.local
 
+[user]
+	name = Mario 
+
+[difftool "Kaleidoscope"]
+	cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
+
+[mergetool "Kaleidoscope"]
+	cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" \"$REMOTE\"
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
 [init]
 	templatedir = ~/.gittemplate
