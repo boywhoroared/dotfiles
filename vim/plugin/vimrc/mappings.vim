@@ -18,6 +18,9 @@ nnoremap ` '
 " Use c-\ to do c-] but open it in a new split.
 nnoremap <c-\> <c-w>v<c-]>zvzz
 
+" Complete tag with with c-] in insert mode
+inoremap <C-]> <C-x><C-]>
+
 " Center the cusor line when jumping changes
 nnoremap g; g;zz
 nnoremap g, g,zz
@@ -68,10 +71,6 @@ else
     " Toggle line numbers
     nnoremap <leader>n :setlocal number!<cr> endif
 endif
-
-" Sort lines
-nnoremap <leader>s vip:!sort<cr>
-vnoremap <leader>s :!sort<cr>
 
 " = Edit Sibling/Adjacent/Nearby Files
 cnoremap %% <C-R>=fnameescape(expand('%:h')).'/'<cr>
