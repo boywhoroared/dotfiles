@@ -64,3 +64,12 @@ if has('linebreak')
     "     :h breakindentopt
 endif
 
+
+" Close the preview window after you select an item from the completion menu
+" Also, see: http://usevim.com/2013/01/25/preview-window/
+if has('autocmd') && v:version >= 704
+    augroup completedone
+        au!
+        au CompleteDone * pclose
+    augroup END
+endif
