@@ -21,19 +21,16 @@ Plug 'tpope/vim-ragtag'
 Plug 'tpope/vim-characterize'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-dispatch'
-Plug 'tpope/vim-capslock'
 Plug 'Soares/tabloid.vim'
 
 " Search
 Plug 'wincent/ferret'
-Plug 'osyo-manga/vim-over'
 
 Plug 'jiangmiao/auto-pairs'
 Plug 'vim-scripts/matchit.zip'
 
 " Text Objects
 Plug 'kurkale6ka/vim-pairs'
-Plug 'wellle/targets.vim'
 
 Plug 'vim-scripts/Align'
 Plug 'godlygeek/tabular'
@@ -47,7 +44,6 @@ Plug 'tpope/vim-fugitive'
 " PHP
 Plug 'StanAngeloff/php.vim', { 'for': 'php' }
 Plug 'shawncplus/phpcomplete.vim', { 'for': 'php' }
-Plug 'vim-php/tagbar-phpctags.vim', { 'for': 'php' }
 Plug '2072/PHP-Indenting-for-VIm', { 'for': 'php' }
 
 " Javascript
@@ -91,7 +87,6 @@ Plug 'zaiste/tmux.vim'
 
 " Colorschemes 
 Plug 'sjl/badwolf'
-Plug 'mitsuhiko/fruity-vim-colorscheme'
 Plug 'jnurmine/Zenburn'
 Plug 'junegunn/seoul256.vim'
 Plug 'morhetz/gruvbox'
@@ -103,14 +98,11 @@ Plug 'romainl/Disciple'
 Plug 'baskerville/bubblegum'
 Plug 'noahfrederick/vim-hemisu'
 Plug 'whatyouhide/vim-gotham'
-Plug 'thinkpixellab/flatland', {'rtp': 'vim/'}
 Plug 'jordwalke/flatlandia'
 Plug 'ajh17/Spacegray.vim'
 Plug 'boywhoroared/vim-colors-mac_classic'
 Plug 'tpope/vim-vividchalk'
-Plug 'henrybw/vim-colors-aurora'
 Plug 'keith/parsec.vim'
-"Plug 'Soares/solarized.vim'
 Plug 'josephwecker/neutron.vim'
 Plug 'yosiat/oceanic-next-vim'
 Plug 'chmllr/elrodeo-colorscheme'
