@@ -11,3 +11,6 @@ setlocal smarttab
 
 " Enable all the fancy highlighting for Python
 let python_highlight_all = 1
+
+" Compiler
+setlocal makeprg=python\ -m\ py_compile\ %
