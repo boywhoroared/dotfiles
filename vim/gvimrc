@@ -1,3 +1,5 @@
+silent! colorscheme gotham
+
 set guifont=Office\ Code\ Pro\ D:h14
 set guioptions-=eT
 
