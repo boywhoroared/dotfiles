@@ -46,3 +46,6 @@ endif
 " Show matching paren
 set showmatch
 
+" Search case-insensitively unless the search uses mixed case
+set smartcase
+set ignorecase
