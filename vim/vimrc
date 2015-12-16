@@ -59,7 +59,7 @@ command! -nargs=1 Tabs   execute "setlocal shiftwidth=" . <args> . " softtabstop
 
 " Automatically use comment markers when starting a new line if the current
 " line is a comment
-set formatoptions+=roq
+set formatoptions+=rq
 "
 " If we can, add j to the format options to get rid of comment leaders when
 " joining lines
