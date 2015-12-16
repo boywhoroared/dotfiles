@@ -26,7 +26,6 @@ Plug 'Soares/tabloid.vim'
 " Search
 Plug 'wincent/ferret'
 
-Plug 'jiangmiao/auto-pairs'
 Plug 'vim-scripts/matchit.zip'
 
 " Text Objects
