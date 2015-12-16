@@ -1,0 +1,66 @@
+#!/bin/bash
+
+# Automatically setup your Author Name and Email from your config
+#
+# In your config, add a per URL user section. Example:
+#
+# [user]
+# name=Bowser
+# email=author@example.com
+#
+# [user "https://repo.example.net"]
+# name=Luigi Mario
+# email=luigi@example.net
+#
+# [user "https://repo.example.org"]
+# name=Mario Mario
+# email=mario@example.org
+#
+# [user "ssh://git@gitlab.example.com"]
+# name=Mario Luigi
+# email=mariol@example.com
+#
+# ---
+#
+# Now we can use `git config --get-urlmatch` section.key URL to retrieve the value.
+#
+# git config --get-urlmatch user.name "https://repo.example.org"
+# git config --get-urlmatch user.name "https://repo.example.net"
+# git config user.name
+#
+# urlmatch will select the closest matching url
+#
+# NOTE: This is problematic for Gitlab's default location format:
+# [user@]host.xz:path/to/repo.git/ so you will have to explicitly use the
+# SSH form: ssh://user@host.xz/path/to/repo.git
+# since --urlmatch depends on having the scheme (https://, ssh://, ftp:// etc.)
+#
+# ---
+#
+# To check the URL of our repo, we can use ls-remote
+# `git ls-remote --get-url 'origin'`
+#
+# ---
+#
+# Finally, we should be able to
+#
+# originurl=$(git ls-remote --get-url 'origin')  
+# authorname=$(git config --get-urlmatch user.name $originurl)
+# authoremail=$(git config --get-urlmatch user.email $originurl)
+#
+
+
+# Get user name and email from config -- user.<url>.name, user.<url>.email --
+# and set it locally.
+
+originurl=$(git ls-remote --get-url 'origin')
+username=$(git config --get-urlmatch user.name $originurl)
+useremail=$(git config --get-urlmatch user.email $originurl)
+
+if [[ -n $username ]] ; then
+    git config --local user.name $username
+fi
+
+if [[ -n $username ]] ; then
+    git config --local user.email $useremail
+fi
