@@ -115,3 +115,6 @@ vnoremap <Leader><Space> za
 " Make zO recursively open whatever top level fold we're in, no matter where the
 " cursor happens to be.
 nnoremap zO zCzO
+
+" . operator works on visually selected lines
+vnoremap . :norm.<CR>
