@@ -31,8 +31,9 @@ Plug 'vim-scripts/matchit.zip'
 " Text Objects
 Plug 'kurkale6ka/vim-pairs'
 
-Plug 'vim-scripts/Align'
-Plug 'godlygeek/tabular'
+Plug 'tommcdo/vim-lion'
+" Plug 'vim-scripts/Align'
+" Plug 'godlygeek/tabular'
 
 Plug 'chrisbra/NrrwRgn'
 Plug 'AndrewRadev/linediff.vim'
@@ -106,5 +107,8 @@ Plug 'josephwecker/neutron.vim'
 Plug 'yosiat/oceanic-next-vim'
 Plug 'chmllr/elrodeo-colorscheme'
 Plug 'romainl/flattened'
+Plug 'romainl/vim-sweet16'
+Plug 'ajgrf/sprinkles'
+Plug 'viniciusban/vim-github-colorscheme'
 call plug#end()
 
