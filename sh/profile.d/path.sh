@@ -11,7 +11,7 @@ PATH=$PATH:$GOPATH/bin:$GOROOT/bin
 
 # Python PIP
 # Install packages using: `pip install --user PACKAGE`
-PATH="$PATH:~/Library/Python/2.7/bin"
+PATH="$PATH:$HOME/Library/Python/2.7/bin"
 
 # Local executables
 PATH="$HOME/.local/bin:$HOME/.bin:$PATH"
