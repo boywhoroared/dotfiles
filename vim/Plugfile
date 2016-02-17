@@ -59,6 +59,7 @@ Plug 'calebsmith/vim-lambdify', { 'for': ['scheme','racket'] }
 
 " Python
 Plug 'hdima/python-syntax'
+Plug 'tweekmonster/braceless.vim'
 
 " Go
 Plug 'fatih/vim-go'
@@ -110,5 +111,13 @@ Plug 'romainl/flattened'
 Plug 'romainl/vim-sweet16'
 Plug 'ajgrf/sprinkles'
 Plug 'viniciusban/vim-github-colorscheme'
+Plug 'ewilazarus/preto'
+Plug 'andreasvc/vim-256noir'
+Plug 'AlessandroYorba/Alduin'
+Plug 'atelierbram/vim-colors_duotones'
+Plug 'marcopaganini/termschool-vim-theme'
+Plug 'AlessandroYorba/Sierra'
+Plug 'nanotech/jellybeans.vim'
+Plug 'ninja/sky'
+Plug 'tejr/sahara'
 call plug#end()
-
