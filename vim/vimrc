@@ -169,14 +169,14 @@ endif
 " Folds and Scrolls
 set foldlevelstart=0
 
-" Keep 7 lines of context/screen when scrolling vertically
-set scrolloff=7
+" Keep 3 lines of context/screen when scrolling vertically
+set scrolloff=3
 set sidescroll=1
 set sidescrolloff=4
-nnoremap <C-e> 7<C-e>
-nnoremap <C-y> 7<C-y>
-vnoremap <C-e> 7<C-e>
-vnoremap <C-y> 7<C-y>
+nnoremap <C-e> 3<C-e>
+nnoremap <C-y> 3<C-y>
+vnoremap <C-e> 3<C-e>
+vnoremap <C-y> 3<C-y>
 
 " Set search path for gf, find, sfind, tabfind etc
 " See :h path
