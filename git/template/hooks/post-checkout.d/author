@@ -61,6 +61,6 @@ if [[ -n $username ]] ; then
     git config --local user.name $username
 fi
 
-if [[ -n $username ]] ; then
+if [[ -n $useremail ]] ; then
     git config --local user.email $useremail
 fi
