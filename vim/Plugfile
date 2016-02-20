@@ -106,7 +106,7 @@ Plug 'tpope/vim-vividchalk'
 Plug 'keith/parsec.vim'
 Plug 'josephwecker/neutron.vim'
 Plug 'yosiat/oceanic-next-vim'
-Plug 'chmllr/elrodeo-colorscheme'
+Plug 'chmllr/elrodeo-colorscheme', { 'rtp': 'vim' }
 Plug 'romainl/flattened'
 Plug 'romainl/vim-sweet16'
 Plug 'ajgrf/sprinkles'
