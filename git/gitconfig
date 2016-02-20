@@ -403,7 +403,6 @@
   # Delete all branches that have already been merged into master.
   master-cleanse = !"git checkout master && git branch --merged | xargs git branch -d"
 
-
   rj = "!vim -o $1.rej"
 
 [merge]
@@ -423,11 +422,14 @@
 [commit]
   template = ~/.gitmessage
 
+[init]
+  templatedir = ~/.gittemplate
+
 [include]
   path = .gitconfig.local
 
 [user]
-	name = Mario 
+  name = Mario
 
 [difftool "Kaleidoscope"]
 	cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
@@ -440,5 +442,3 @@
 [mergetool "sourcetree"]
 	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
-[init]
-	templatedir = ~/.gittemplate
