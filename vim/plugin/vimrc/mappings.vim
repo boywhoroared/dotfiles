@@ -7,9 +7,12 @@
 " See: http://danielmiessler.com/blog/using-jk-vs-jj-for-esc-remapping-in-vim-steve-losh
 inoremap jk <Esc>
 
-" Move up and down DISPLAYED lines - saner with wrapped text
-nnoremap j gj
-nnoremap k gk
+" Move up and down DISPLAYED lines, unless I gave a count, then operate
+" line wise (actual lines)
+nnoremap <expr> k      v:count == 0 ? 'gk' : 'k'
+nnoremap <expr> j      v:count == 0 ? 'gj' : 'j'
+nnoremap <expr> <Up>   v:count == 0 ? 'gk' : 'k'
+nnoremap <expr> <Down> v:count == 0 ? 'gj' : 'j'
 
 " ` is more useful than ' but less accessible.
 nnoremap ' `
@@ -20,6 +23,11 @@ nnoremap <c-\> <c-w>v<c-]>zvzz
 
 " Complete tag with with c-] in insert mode
 inoremap <C-]> <C-x><C-]>
+
+" Cancel Insertion
+" Rebind Ctrl-C in insert mode to not only leave insert mode without firing
+" InsertLeave events, but also to actually undo the current insert operation
+inoremap <C-c> <C-c>u
 
 " Center the cusor line when jumping changes
 nnoremap g; g;zz
@@ -118,3 +126,10 @@ nnoremap zO zCzO
 
 " . operator works on visually selected lines
 vnoremap . :norm.<CR>
+
+" Show Synxtax ID/Group
+command! SS echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
+
+" Switch working directory
+command! LCD lcd %:p:h
+command! CD  cd %:p:h
