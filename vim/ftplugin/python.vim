@@ -14,3 +14,6 @@ let python_highlight_all = 1
 
 " Compiler
 setlocal makeprg=python\ -m\ py_compile\ %
+setlocal errorformat=%C\ %.%#,%A\ \ File\ \"%f\"\\,\ line\ %l%.%#,%Z%[%^\ ]%\\@=%m
+"setlocal makeprg=pylint\ --reports=n\ --output-format=parseable\ %:p
+"setlocal errorformat=%f:%l:\ %m
