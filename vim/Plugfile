@@ -27,6 +27,7 @@ Plug 'Soares/tabloid.vim'
 Plug 'wincent/ferret'
 
 Plug 'vim-scripts/matchit.zip'
+Plug 'jiangmiao/auto-pairs'
 
 " Text Objects
 Plug 'kurkale6ka/vim-pairs'
@@ -104,20 +105,15 @@ Plug 'ajh17/Spacegray.vim'
 Plug 'boywhoroared/vim-colors-mac_classic'
 Plug 'tpope/vim-vividchalk'
 Plug 'keith/parsec.vim'
-Plug 'josephwecker/neutron.vim'
 Plug 'yosiat/oceanic-next-vim'
 Plug 'chmllr/elrodeo-colorscheme', { 'rtp': 'vim' }
 Plug 'romainl/flattened'
 Plug 'romainl/vim-sweet16'
 Plug 'ajgrf/sprinkles'
-Plug 'viniciusban/vim-github-colorscheme'
 Plug 'ewilazarus/preto'
 Plug 'andreasvc/vim-256noir'
 Plug 'AlessandroYorba/Alduin'
-Plug 'atelierbram/vim-colors_duotones'
-Plug 'marcopaganini/termschool-vim-theme'
 Plug 'AlessandroYorba/Sierra'
 Plug 'nanotech/jellybeans.vim'
-Plug 'ninja/sky'
 Plug 'tejr/sahara'
 call plug#end()
