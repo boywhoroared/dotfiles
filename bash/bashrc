@@ -47,9 +47,6 @@ shopt -s checkhash
 # Update columns and rows if window size changes
 shopt -s checkwinsize
 
-# Put multi-line commands onto one line of history
-shopt -s cmdhist
-
 # Case-insensitive globbing (used in pathname expansion)
 shopt -s nocaseglob
 
@@ -59,17 +56,28 @@ shopt -s dotglob
 # Enable advanced pattern matching
 shopt -s extglob
 
-# Append rather than overwrite Bash history
+# Better History - See http://blog.sanctum.geek.nz/better-bash-history/
+
+## Put multi-line commands onto one line of history
+shopt -s cmdhist
+
+## Append rather than overwrite Bash history
 shopt -s histappend
 
-# Repeat the line on failed history expansion
+## Repeat the line on failed history expansion
 shopt -s histreedit
 
-# Don't use aliases, functions are better
-shopt -u expand_aliases
+## Ignore common commands
+HISTIGNORE='bg:fg:history'
+
+## Ignore duplicated commands
+HISTCONTROL=ignoredups
 
 # Repeat the expanded line on successful history expansion
 shopt -s histverify
+
+# Don't use aliases, functions are better
+shopt -u expand_aliases
 
 # Don't use Bash's builtin host completion
 shopt -u hostcomplete
