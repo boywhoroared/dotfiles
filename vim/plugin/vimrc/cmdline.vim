@@ -51,3 +51,5 @@ if has('cmdline_info')
   set ruler
 endif
 
+cnoremap %% <c-r>=fnameescape(expand('%'))<cr>
+cnoremap :: <c-r>=fnameescape(expand('%:p:h'))<cr>/

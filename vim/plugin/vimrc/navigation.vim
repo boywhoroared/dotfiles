@@ -15,10 +15,10 @@ nnoremap <Leader>v :vert sfind *
 nnoremap <Leader>t :tabfind *
 
 " Juggle files recursively under the directory of the current file.
-nnoremap <Leader>F :find <C-R>=expand('%:h').'/*'<CR>
-nnoremap <Leader>S :sfind <C-R>=expand('%:h').'/*'<CR>
-nnoremap <Leader>V :vert sfind <C-R>=expand('%:h').'/*'<CR>
-nnoremap <Leader>T :tabfind <C-R>=expand('%:h').'/*'<CR>
+nnoremap <Leader>F :find <C-R>=fnameescape(expand('%:p:h')).'/**/*'<CR>
+nnoremap <Leader>S :sfind <C-R>=fnameescape(expand('%:p:h')).'/**/*'<CR>
+nnoremap <Leader>V :vert sfind <C-R>=fnameescape(expand('%:p:h')).'/**/*'<CR>
+nnoremap <Leader>T :tabfind <C-R>=fnameescape(expand('%:p:h')).'/**/*'<CR>
 
 " == Juggling Buffers
 
@@ -66,3 +66,9 @@ nnoremap ]I ]I:ijump   <C-r><C-w><S-Left><Left><Left>
 " Juggling with changes
 nnoremap <Leader>; *``cgn
 nnoremap <Leader>, #``cgN
+
+" Juggling Completion
+inoremap ,, <C-x><C-o><C-r>=pumvisible() ? "\<lt>Down>\<lt>C-p>\<lt>Down>" : ""<CR>
+inoremap ,; <C-n><C-r>=pumvisible() ? "\<lt>Down>\<lt>C-p>\<lt>Down>" : ""<CR>
+inoremap ,: <C-x><C-f><C-r>=pumvisible() ? "\<lt>Down>\<lt>C-p>\<lt>Down>" : ""<CR>
+inoremap ,= <C-x><C-l><C-r>=pumvisible() ? "\<lt>Down>\<lt>C-p>\<lt>Down>" : "

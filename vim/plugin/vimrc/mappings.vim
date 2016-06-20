@@ -81,11 +81,16 @@ else
 endif
 
 " = Edit Sibling/Adjacent/Nearby Files
-cnoremap %% <C-R>=fnameescape(expand('%:h')).'/'<cr>
 map <leader>ew :e %%
 map <leader>es :sp %%
 map <leader>ev :vsp %%
 map <leader>et :tabe %%
+
+" Editing Recent Files
+command! -nargs=1 -complete=customlist,mru#MRUComplete ME call mru#MRU('edit', <f-args>)
+command! -nargs=1 -complete=customlist,mru#MRUComplete MS call mru#MRU('split', <f-args>)
+command! -nargs=1 -complete=customlist,mru#MRUComplete MV call mru#MRU('vsplit', <f-args>)
+command! -nargs=1 -complete=customlist,mru#MRUComplete MT call mru#MRU('tabedit', <f-args>)
 
 "= Tabs 
 " Handle tabs like the rest of OS X Tabs and Spaces

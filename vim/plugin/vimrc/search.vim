@@ -49,3 +49,12 @@ set showmatch
 " Search case-insensitively unless the search uses mixed case
 set smartcase
 set ignorecase
+
+" Press <Tab>/<S-Tab> to move to next match during incremental search
+" Depends on wilchar=<Tab>, wildcharm=<C-z>
+cnoremap <expr> <Tab>   getcmdtype() == "/" \|\| getcmdtype() == "?" ? "<CR>/<C-r>/" : "<C-z>"
+cnoremap <expr> <S-Tab> getcmdtype() == "/" \|\| getcmdtype() == "?" ? "<CR>?<C-r>/" : "<S-Tab>"
+
+" super quick search and replace
+nnoremap <Leader>- :'{,'}s/\<<C-r>=expand("<cword>")<CR>\>/
+nnoremap <Leader>%       :%s/\<<C-r>=expand("<cword>")<CR>\>/'}'
