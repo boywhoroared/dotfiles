@@ -1,7 +1,8 @@
-silent! colorscheme gotham
+silent! colorscheme seoul256-light
 
-set guifont=Office\ Code\ Pro\ D:h14
+set guifont=Fira\ Code:h14
 set guioptions-=eT
+set macligatures 
 
 " Cursor
 " mode-list:argument-list,mode-list:argument-list,..
@@ -14,7 +15,7 @@ set guicursor=n-v-c:block-Cursor/lCursor,ve:ver35-Cursor,o:hor50-Cursor,i-ci:ver
 " set guicursor+=i:blinkwait10
 
 set columns=134
-set lines=32
+set lines=52
 
 " Quick Fonts
 menu Fonts.Menlo :set guifont=Menlo:h14<CR>
@@ -23,8 +24,10 @@ menu Fonts.Source\ Code\ Pro :set guifont=Source\ Code\ Pro:h14<CR>
 menu Fonts.Office\ Code\ Pro :set guifont=Office\ Code\ Pro\ D:h14<CR>
 menu Fonts.Ubuntu\ Mono :set guifont=Ubuntu\ Mono:h16<CR>
 menu Fonts.Roboto\ Mono :set guifont=Roboto\ Mono:h14<CR>
+menu Fonts.Roboto\ Mono\ Thin :set guifont=Roboto\ Mono\ Thin:h14<CR>
 menu Fonts.Consolas :set guifont=Consolas:h14<CR>
 menu Fonts.Inconsolata :set guifont=Inconsolata:h18<CR>
 menu Fonts.Pragmata\ Pro :set guifont=Pragmata\ Pro:h14<CR>
 menu Fonts.M+\ 1mn :set guifont=M\+\ 1mn:h14<CR>
 menu Fonts.Fira\ Mono :set guifont=Fira\ Mono:h14<CR>
+menu Fonts.Operator\ Mono :set guifont=Operator\ Mono:h16<CR>
