@@ -38,6 +38,8 @@ Plug 'tommcdo/vim-lion'
 
 Plug 'chrisbra/NrrwRgn'
 Plug 'AndrewRadev/linediff.vim'
+" Diff by char/words
+Plug 'rickhowe/diffchar.vim'
 
 " Git
 Plug 'tpope/vim-fugitive'
