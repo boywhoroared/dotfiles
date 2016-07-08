@@ -107,7 +107,6 @@ Plug 'ajh17/Spacegray.vim'
 Plug 'boywhoroared/vim-colors-mac_classic'
 Plug 'tpope/vim-vividchalk'
 Plug 'keith/parsec.vim'
-Plug 'yosiat/oceanic-next-vim'
 Plug 'chmllr/elrodeo-colorscheme', { 'rtp': 'vim' }
 Plug 'romainl/flattened'
 Plug 'romainl/vim-sweet16'
@@ -117,5 +116,7 @@ Plug 'andreasvc/vim-256noir'
 Plug 'AlessandroYorba/Alduin'
 Plug 'AlessandroYorba/Sierra'
 Plug 'nanotech/jellybeans.vim'
-Plug 'tejr/sahara'
+Plug 'jeffkreeftmeijer/vim-dim'
+" Plug 'tejr/sahara' 
+" Moved to https://sanctum.geek.nz/cgit/sahara.git/ however this repo doesn't support the shallow cloning VimPlug uses
 call plug#end()
