@@ -81,7 +81,7 @@ Plug 'juvenn/mustache.vim'
 Plug 'exu/pgsql.vim'
 
 " Writing
-Plug 'plasticboy/vim-markdown'
+Plug 'tpope/vim-markdown'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
 Plug 'reedes/vim-wordy', { 'for': ['markdown', 'text', 'mail', 'asciidoc', 'rst']}
@@ -117,6 +117,10 @@ Plug 'AlessandroYorba/Alduin'
 Plug 'AlessandroYorba/Sierra'
 Plug 'nanotech/jellybeans.vim'
 Plug 'jeffkreeftmeijer/vim-dim'
+Plug 'owickstrom/vim-colors-paramount'
+Plug 'hhsnopek/vim-firewatch'
+Plug 'limadm/vim-blues'
 " Plug 'tejr/sahara' 
 " Moved to https://sanctum.geek.nz/cgit/sahara.git/ however this repo doesn't support the shallow cloning VimPlug uses
+" Plug 'https://sanctum.geek.nz/code/sahara.git'
 call plug#end()
