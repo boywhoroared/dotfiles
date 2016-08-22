@@ -1,6 +1,6 @@
-silent! colorscheme seoul256-light
+silent! colorscheme elrodeo 
 
-set guifont=Fira\ Code:h14
+set guifont=Source\ Code\ Pro:h14
 set guioptions-=eT
 set macligatures 
 
@@ -24,7 +24,7 @@ menu Fonts.Source\ Code\ Pro :set guifont=Source\ Code\ Pro:h14<CR>
 menu Fonts.Office\ Code\ Pro :set guifont=Office\ Code\ Pro\ D:h14<CR>
 menu Fonts.Ubuntu\ Mono :set guifont=Ubuntu\ Mono:h16<CR>
 menu Fonts.Roboto\ Mono :set guifont=Roboto\ Mono:h14<CR>
-menu Fonts.Roboto\ Mono\ Thin :set guifont=Roboto\ Mono\ Thin:h14<CR>
+menu Fonts.Roboto\ Mono\ Light :set guifont=Roboto\ Mono\ Light:h14<CR>
 menu Fonts.Consolas :set guifont=Consolas:h14<CR>
 menu Fonts.Inconsolata :set guifont=Inconsolata:h18<CR>
 menu Fonts.Pragmata\ Pro :set guifont=Pragmata\ Pro:h14<CR>
