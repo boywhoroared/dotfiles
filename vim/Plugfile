@@ -12,7 +12,6 @@ Plug 'honza/vim-snippets'
 Plug 'ajh17/VimCompletesMe'
 
 Plug 'scrooloose/syntastic', { 'on': 'SyntasticCheck' }
-Plug 'tomtom/tcomment_vim'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-abolish'
@@ -21,7 +20,7 @@ Plug 'tpope/vim-ragtag'
 Plug 'tpope/vim-characterize'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-dispatch'
-Plug 'Soares/tabloid.vim'
+Plug 'tpope/vim-commentary'
 
 " Search
 Plug 'wincent/ferret'
@@ -33,11 +32,7 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'kurkale6ka/vim-pairs'
 
 Plug 'tommcdo/vim-lion'
-" Plug 'vim-scripts/Align'
-" Plug 'godlygeek/tabular'
 
-Plug 'chrisbra/NrrwRgn'
-Plug 'AndrewRadev/linediff.vim'
 " Diff by char/words
 Plug 'rickhowe/diffchar.vim'
 
@@ -48,6 +43,9 @@ Plug 'tpope/vim-fugitive'
 Plug 'StanAngeloff/php.vim', { 'for': 'php' }
 Plug 'shawncplus/phpcomplete.vim', { 'for': 'php' }
 Plug '2072/PHP-Indenting-for-VIm', { 'for': 'php' }
+Plug 'sniphpets/sniphpets'
+Plug 'sniphpets/sniphpets-common'
+Plug 'sniphpets/sniphpets-postfix-codes'
 
 " Javascript
 Plug 'othree/yajs.vim', { 'for': 'javascript' }
@@ -117,4 +115,5 @@ Plug 'owickstrom/vim-colors-paramount'
 " Plug 'tejr/sahara' 
 " Moved to https://sanctum.geek.nz/cgit/sahara.git/ however this repo doesn't support the shallow cloning VimPlug uses
 " Plug 'https://sanctum.geek.nz/code/sahara.git'
+Plug 'atelierbram/vim-colors_duotones'
 call plug#end()

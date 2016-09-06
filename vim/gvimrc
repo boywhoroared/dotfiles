@@ -1,6 +1,6 @@
-silent! colorscheme elrodeo 
+silent! colorscheme apprentice 
 
-set guifont=Source\ Code\ Pro:h14
+set guifont=Fira\ Code:h14
 set guioptions-=eT
 set macligatures 
 
@@ -14,8 +14,8 @@ set guicursor=n-v-c:block-Cursor/lCursor,ve:ver35-Cursor,o:hor50-Cursor,i-ci:ver
 " set guicursor+=n-v-c:blinkon0
 " set guicursor+=i:blinkwait10
 
-set columns=134
-set lines=52
+set columns=126
+set lines=48
 
 " Quick Fonts
 menu Fonts.Menlo :set guifont=Menlo:h14<CR>
@@ -27,7 +27,7 @@ menu Fonts.Roboto\ Mono :set guifont=Roboto\ Mono:h14<CR>
 menu Fonts.Roboto\ Mono\ Light :set guifont=Roboto\ Mono\ Light:h14<CR>
 menu Fonts.Consolas :set guifont=Consolas:h14<CR>
 menu Fonts.Inconsolata :set guifont=Inconsolata:h18<CR>
-menu Fonts.Pragmata\ Pro :set guifont=Pragmata\ Pro:h14<CR>
+menu Fonts.Pragmata\ Pro :set guifont=Pragmata\ Pro\ Mono:h14<CR>
 menu Fonts.M+\ 1mn :set guifont=M\+\ 1mn:h14<CR>
 menu Fonts.Fira\ Mono :set guifont=Fira\ Mono:h14<CR>
 menu Fonts.Operator\ Mono :set guifont=Operator\ Mono:h16<CR>
