@@ -38,6 +38,7 @@ Plug 'rickhowe/diffchar.vim'
 
 " Git
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-git'
 
 " PHP
 Plug 'StanAngeloff/php.vim', { 'for': 'php' }
@@ -60,7 +61,8 @@ Plug 'calebsmith/vim-lambdify', { 'for': ['scheme','racket'] }
 
 " Python
 Plug 'hdima/python-syntax'
-Plug 'tweekmonster/braceless.vim'
+Plug 'tweekmonster/braceless.vim', { 'for': ['python'] }
+Plug 'nvie/vim-flake8', { 'for': ['python'] }
 
 " Go
 Plug 'fatih/vim-go'
@@ -98,22 +100,18 @@ Plug 'baskerville/bubblegum'
 Plug 'noahfrederick/vim-hemisu'
 Plug 'whatyouhide/vim-gotham'
 Plug 'jordwalke/flatlandia'
-Plug 'ajh17/Spacegray.vim'
-Plug 'boywhoroared/vim-colors-mac_classic'
 Plug 'tpope/vim-vividchalk'
 Plug 'keith/parsec.vim'
 Plug 'chmllr/elrodeo-colorscheme', { 'rtp': 'vim' }
 Plug 'romainl/flattened'
 Plug 'romainl/vim-sweet16'
-Plug 'ajgrf/sprinkles'
-Plug 'andreasvc/vim-256noir'
 Plug 'AlessandroYorba/Alduin'
 Plug 'AlessandroYorba/Sierra'
 Plug 'nanotech/jellybeans.vim'
 Plug 'jeffkreeftmeijer/vim-dim'
 Plug 'owickstrom/vim-colors-paramount'
-" Plug 'tejr/sahara' 
-" Moved to https://sanctum.geek.nz/cgit/sahara.git/ however this repo doesn't support the shallow cloning VimPlug uses
-" Plug 'https://sanctum.geek.nz/code/sahara.git'
-Plug 'atelierbram/vim-colors_duotones'
+Plug 'mitsuhiko/fruity-vim-colorscheme'
+" Plug '~/.vim/bundle/sahara'
+Plug 'AlessandroYorba/Despacio'
+Plug 'jpo/vim-railscasts-theme'
 call plug#end()
