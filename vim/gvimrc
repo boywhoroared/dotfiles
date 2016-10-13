@@ -2,6 +2,7 @@ silent! colorscheme apprentice
 
 set guifont=Fira\ Code:h14
 set guioptions-=eT
+set linespace=1
 set macligatures 
 
 " Cursor
@@ -32,5 +33,6 @@ menu Fonts.M+\ 1mn :set guifont=M\+\ 1mn:h14<CR>
 menu Fonts.Fira\ Mono :set guifont=Fira\ Mono:h14<CR>
 menu Fonts.Operator\ Mono :set guifont=Operator\ Mono:h16<CR>
 menu Fonts.Fira\ Code :set guifont=Fira\ Code:h14<CR>
+menu Fonts.Fira\ Code\ Light :set guifont=Fira\ Code\ Light:h14<CR>
 menu Fonts.Monoid :set guifont=Monoid:h14<CR>
 menu Fonts.Hasklig :set guifont=Hasklig:h14<CR>
