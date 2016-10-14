@@ -55,17 +55,10 @@ Plug 'elzr/vim-json', { 'for': 'json' }
 Plug 'rmanalan/jshint.vim'
 Plug 'tpope/vim-jdaddy', { 'for': 'json' }
 
-" Scheme
-Plug 'wlangstroth/vim-racket', { 'for': ['scheme','racket'] }
-Plug 'calebsmith/vim-lambdify', { 'for': ['scheme','racket'] }
-
 " Python
 Plug 'hdima/python-syntax'
 Plug 'tweekmonster/braceless.vim', { 'for': ['python'] }
 Plug 'nvie/vim-flake8', { 'for': ['python'] }
-
-" Go
-Plug 'fatih/vim-go'
 
 " HTML
 Plug 'othree/html5.vim'
@@ -90,28 +83,26 @@ Plug 'reedes/vim-wordy', { 'for': ['markdown', 'text', 'mail', 'asciidoc', 'rst'
 Plug 'zaiste/tmux.vim'
 
 " Colorschemes 
+Plug 'http://git.theboywhoroared.com/arturo/vim-sahara.git'
 Plug 'sjl/badwolf'
-Plug 'jnurmine/Zenburn'
 Plug 'junegunn/seoul256.vim'
-Plug 'cocopon/iceberg.vim'
 Plug 'romainl/Apprentice'
 Plug 'romainl/Disciple'
-Plug 'baskerville/bubblegum'
-Plug 'noahfrederick/vim-hemisu'
-Plug 'whatyouhide/vim-gotham'
-Plug 'jordwalke/flatlandia'
-Plug 'tpope/vim-vividchalk'
-Plug 'keith/parsec.vim'
-Plug 'chmllr/elrodeo-colorscheme', { 'rtp': 'vim' }
 Plug 'romainl/flattened'
 Plug 'romainl/vim-sweet16'
 Plug 'AlessandroYorba/Alduin'
 Plug 'AlessandroYorba/Sierra'
+Plug 'AlessandroYorba/Despacio'
+Plug 'whatyouhide/vim-gotham'
+Plug 'jnurmine/Zenburn'
 Plug 'nanotech/jellybeans.vim'
-Plug 'jeffkreeftmeijer/vim-dim'
+Plug 'tpope/vim-vividchalk'
+Plug 'cocopon/iceberg.vim'
+Plug 'baskerville/bubblegum'
+Plug 'noahfrederick/vim-hemisu'
 Plug 'owickstrom/vim-colors-paramount'
 Plug 'mitsuhiko/fruity-vim-colorscheme'
-" Plug '~/.vim/bundle/sahara'
-Plug 'AlessandroYorba/Despacio'
 Plug 'jpo/vim-railscasts-theme'
+Plug 'vim-scripts/oceandeep'
+Plug 'vim-scripts/oceanlight'
 call plug#end()
