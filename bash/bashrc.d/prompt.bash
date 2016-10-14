@@ -31,10 +31,13 @@ if command -v brew -v >/dev/null 2>&1; then
 else
 	GIT_PROMPT="$HOME/.etc/bash/git-prompt.sh"
 fi
+
 [ -r "$GIT_PROMPT" ] && [ -f "$GIT_PROMPT" ] && source "$GIT_PROMPT"
+
+# If Bash 4.0 is available, trim very long paths in prompt
+((BASH_VERSINFO[0] >= 4)) && PROMPT_DIRTRIM=3
 
 GIT_PS1_SHOWUPSTREAM="auto"
 GIT_PS1_SHOWCOLORHINTS=1
 GIT_PS1_SHOWSTASHSTATE=1
 PROMPT_COMMAND='__git_ps1 "$(prompt_user_host)\w" "\n\$ "'
-
