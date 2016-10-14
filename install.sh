@@ -1,5 +1,5 @@
 # basic install 
-ln -sFi ~/.dotfiles/bin ~/.bin
+ln -sFi ~/.dotfiles/bin ~/.local/bin
 ln -sFi ~/.dotfiles/etc ~/.etc
 ln -sFi ~/.dotfiles/aliases ~/.aliases
 ln -sFi ~/.dotfiles/env ~/.env
