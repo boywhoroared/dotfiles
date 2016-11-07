@@ -14,6 +14,7 @@ setlocal shiftwidth=4
 setlocal expandtab
 setlocal autoindent
 setlocal smarttab
+setlocal commentstring=//%s
 
 let g:php_folding=1
 
