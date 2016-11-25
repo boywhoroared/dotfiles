@@ -40,6 +40,12 @@ if &term =~ '256color'
   set t_ut=
 endif
 
+" If I can use true colors, do so. Probably need to another guard to check if
+" the terminal supports it. (iTerm and macOS Terminal.app do)
+if has('termguicolors')
+    set termguicolors
+endif
+
 if version >= 703 && exists("+syntax") && (has('gui_running') || has('macunix'))
   " Show a column marker for line length. text SHOULD not go past this
   set colorcolumn=+3

@@ -1,6 +1,7 @@
 silent! colorscheme apprentice 
 
 set guifont=Fira\ Code:h14
+set notermguicolors
 set guioptions-=eT
 set linespace=1
 set macligatures 
