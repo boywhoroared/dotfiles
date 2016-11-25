@@ -105,4 +105,5 @@ Plug 'mitsuhiko/fruity-vim-colorscheme'
 Plug 'jpo/vim-railscasts-theme'
 Plug 'vim-scripts/oceandeep'
 Plug 'vim-scripts/oceanlight'
+Plug 'https://github.com/colepeters/spacemacs-theme.vim'
 call plug#end()
