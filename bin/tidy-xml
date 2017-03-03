@@ -1,2 +1,2 @@
 #!/bin/bash
-tidy-html5 -xml -m -i --wrap 72 --wrap-attributes true --indent-attributes true --literal-attributes yes --output-xml true --indent-spaces 4 $@
+tidy-html5 -xml -m -i --wrap 0 --wrap-attributes true --indent-attributes true --literal-attributes yes --output-xml true --indent-spaces 4 "$@"
