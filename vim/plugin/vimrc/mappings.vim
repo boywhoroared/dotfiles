@@ -138,3 +138,9 @@ command! SS echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
 " Switch working directory
 command! LCD lcd %:p:h
 command! CD  cd %:p:h
+
+" Start interactive EasyAlign in visual mode (e.g. vipga)
+xmap ga <Plug>(EasyAlign)
+
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)
