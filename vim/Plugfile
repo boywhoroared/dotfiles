@@ -33,6 +33,7 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'kurkale6ka/vim-pairs'
 
 Plug 'tommcdo/vim-lion'
+Plug 'junegunn/vim-easy-align'
 
 " Diff by char/words
 Plug 'rickhowe/diffchar.vim'
@@ -53,13 +54,16 @@ Plug 'sniphpets/sniphpets-postfix-codes'
 Plug 'othree/yajs.vim', { 'for': 'javascript' }
 Plug 'vim-scripts/JavaScript-Indent', { 'for': 'javascript' }
 Plug 'elzr/vim-json', { 'for': 'json' }
-Plug 'rmanalan/jshint.vim'
+Plug 'rmanalan/jshint.vim', { 'for': ['javascript', 'json'] }
 Plug 'tpope/vim-jdaddy', { 'for': 'json' }
 
 " Python
-Plug 'hdima/python-syntax'
+Plug 'hdima/python-syntax', { 'for': 'python' }
 Plug 'tweekmonster/braceless.vim', { 'for': ['python'] }
 Plug 'nvie/vim-flake8', { 'for': ['python'] }
+
+" Go Lang
+Plug 'fatih/vim-go'
 
 " HTML
 Plug 'othree/html5.vim'
@@ -93,25 +97,32 @@ Plug 'romainl/flattened'
 Plug 'romainl/vim-sweet16'
 Plug 'AlessandroYorba/Alduin'
 Plug 'AlessandroYorba/Sierra'
-Plug 'AlessandroYorba/Despacio'
-Plug 'AlessandroYorba/Sidonia'
-Plug 'AlessandroYorba/Monrovia'
+" Plug 'AlessandroYorba/Despacio'
+" Plug 'AlessandroYorba/Sidonia'
+" Plug 'AlessandroYorba/Monrovia'
 Plug 'whatyouhide/vim-gotham'
 Plug 'jnurmine/Zenburn'
 Plug 'nanotech/jellybeans.vim'
 Plug 'tpope/vim-vividchalk'
 Plug 'cocopon/iceberg.vim'
-Plug 'baskerville/bubblegum'
+" Plug 'baskerville/bubblegum'
 Plug 'noahfrederick/vim-hemisu'
 Plug 'owickstrom/vim-colors-paramount'
 Plug 'mitsuhiko/fruity-vim-colorscheme'
 Plug 'jpo/vim-railscasts-theme'
 Plug 'vim-scripts/oceandeep'
 Plug 'vim-scripts/oceanlight'
-Plug 'https://github.com/mgutz/vim-colors'
-Plug 'https://github.com/mgutz/gosu-colors'
+" Plug 'https://github.com/mgutz/vim-colors'
+" Plug 'https://github.com/mgutz/gosu-colors'
 Plug 'https://github.com/colepeters/spacemacs-theme.vim'
 Plug 'zefei/cake16'
 Plug 'rakr/vim-two-firewatch'
+Plug 'mhinz/vim-janah'
+Plug 'nightsense/seabird'
+Plug 'chmllr/elrodeo-vim-colorscheme'
+Plug 'MvanDiemen/ghostbuster'
+" Plug 'chriskempson/base16-vim'
+Plug 'ajmwagar/vim-dues'
+" Plug 'morhetz/gruvbox'
 
 call plug#end()
