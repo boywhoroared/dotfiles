@@ -11,7 +11,8 @@ Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'ajh17/VimCompletesMe'
 
-Plug 'scrooloose/syntastic', { 'on': 'SyntasticCheck' }
+" Plug 'scrooloose/syntastic', { 'on': 'SyntasticCheck' }
+Plug 'w0rp/ale'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-abolish'
