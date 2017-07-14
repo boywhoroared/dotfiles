@@ -81,10 +81,10 @@ else
 endif
 
 " = Edit Sibling/Adjacent/Nearby Files
-map <leader>ew :e %%
-map <leader>es :sp %%
-map <leader>ev :vsp %%
-map <leader>et :tabe %%
+map <leader>ew :e <C-R>=expand("%:p:h")."/"<CR>
+map <leader>es :sp <C-R>=expand("%:p:%")."/"<CR>
+map <leader>ev :vsp <C-R>=expand("%:p:h")."/"<CR>
+map <leader>et :tabe <C-R>=expand("%:p:h")."/"<CR>
 
 " Editing Recent Files
 command! -nargs=1 -complete=customlist,mru#MRUComplete ME call mru#MRU('edit', <f-args>)
