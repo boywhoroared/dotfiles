@@ -1,7 +1,7 @@
-silent! colorscheme apprentice 
+silent! colorscheme badwolf 
 
-set guifont=Fira\ Code:h14
 set notermguicolors
+set guifont=Office\ Code\ Pro:h14
 set guioptions-=eT
 set linespace=1
 set macligatures 
@@ -24,9 +24,10 @@ menu Fonts.Consolas            :set guifont=Consolas:h14<CR>
 menu Fonts.Fira\ Code          :set guifont=Fira\ Code:h14<CR>
 menu Fonts.Fira\ Code\ Light   :set guifont=Fira\ Code\ Light:h14<CR>
 menu Fonts.Fira\ Mono          :set guifont=Fira\ Mono:h14<CR>
+menu Fonts.Hack                :set guifont=Hack:h14<CR>
 menu Fonts.Hasklig             :set guifont=Hasklig:h14<CR>
 menu Fonts.Inconsolata         :set guifont=Inconsolata:h18<CR>
-menu Fonts.Input\ Mono\ Narrow :set guifont=Input\ Mono\ Narrow:h14<CR> linespace=2
+menu Fonts.Input\ Mono\ Narrow :set guifont=Input\ Mono\ Narrow:h14 linespace=2<CR>
 menu Fonts.M+\ 1mn             :set guifont=M\+\ 1mn:h14<CR>
 menu Fonts.Menlo               :set guifont=Menlo:h14<CR>
 menu Fonts.Monaco              :set guifont=Monaco:h14<CR>
