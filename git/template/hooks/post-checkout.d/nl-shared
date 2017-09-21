@@ -1,0 +1,21 @@
+#!/bin/bash
+set -e
+
+gnureadlink() {
+    if hash greadlink 2>/dev/null; then
+        greadlink "$@"
+    else
+        # This will fail on macOS because Darwin's readlink does not support the -f
+        # option. I need sturdier check.
+        readlink "$@"
+    fi
+}
+
+PATH="/usr/local/bin:$PATH"
+root_dir="`git rev-parse --show-toplevel`"
+shared_dir=$(gnureadlink -f "$root_dir/../ui-core/_shared")
+
+if [[ ! -d $shared_dir ]]; then
+    echo 'Linking _shared'
+    ln -s "$shared_dir" "$root_dir/_shared"
+fi
