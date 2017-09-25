@@ -14,8 +14,9 @@ gnureadlink() {
 PATH="/usr/local/bin:$PATH"
 root_dir="`git rev-parse --show-toplevel`"
 shared_dir=$(gnureadlink -f "$root_dir/../ui-core/_shared")
+origin_url=$(git ls-remote --get-url 'origin')
 
-if [[ ! -d $shared_dir ]]; then
+if [[ ! -d $shared_dir && "$origin_url" = *gitlab.deck.northernlight* ]]; then
     echo 'Linking _shared'
     ln -s "$shared_dir" "$root_dir/_shared"
 fi
