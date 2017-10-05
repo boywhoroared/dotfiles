@@ -36,16 +36,17 @@ Plug 'tommcdo/vim-lion'
 Plug 'junegunn/vim-easy-align'
 
 " Diff by char/words
-Plug 'rickhowe/diffchar.vim'
+" Plug 'rickhowe/diffchar.vim'
 
 " Git
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-git'
+Plug 'christoomey/vim-conflicted'
 
 " PHP
-Plug 'StanAngeloff/php.vim', { 'for': 'php' }
-Plug 'shawncplus/phpcomplete.vim', { 'for': 'php' }
-Plug '2072/PHP-Indenting-for-VIm', { 'for': 'php' }
+" Plug 'StanAngeloff/php.vim', { 'for': 'php' }
+" Plug 'shawncplus/phpcomplete.vim', { 'for': 'php' }
+" Plug '2072/PHP-Indenting-for-VIm', { 'for': 'php' }
 Plug 'sniphpets/sniphpets'
 Plug 'sniphpets/sniphpets-common'
 Plug 'sniphpets/sniphpets-postfix-codes'
@@ -56,6 +57,8 @@ Plug 'vim-scripts/JavaScript-Indent', { 'for': 'javascript' }
 Plug 'elzr/vim-json', { 'for': 'json' }
 Plug 'rmanalan/jshint.vim', { 'for': ['javascript', 'json'] }
 Plug 'tpope/vim-jdaddy', { 'for': 'json' }
+Plug 'leafgarland/typescript-vim'
+Plug 'jason0x43/vim-js-indent'
 
 " Python
 Plug 'hdima/python-syntax', { 'for': 'python' }
@@ -97,6 +100,7 @@ Plug 'romainl/flattened'
 Plug 'romainl/vim-sweet16'
 Plug 'AlessandroYorba/Alduin'
 Plug 'AlessandroYorba/Sierra'
+Plug 'AlessandroYorba/Arcadia'
 " Plug 'AlessandroYorba/Despacio'
 " Plug 'AlessandroYorba/Sidonia'
 " Plug 'AlessandroYorba/Monrovia'
@@ -112,8 +116,6 @@ Plug 'mitsuhiko/fruity-vim-colorscheme'
 Plug 'jpo/vim-railscasts-theme'
 Plug 'vim-scripts/oceandeep'
 Plug 'vim-scripts/oceanlight'
-" Plug 'https://github.com/mgutz/vim-colors'
-" Plug 'https://github.com/mgutz/gosu-colors'
 Plug 'https://github.com/colepeters/spacemacs-theme.vim'
 Plug 'zefei/cake16'
 Plug 'rakr/vim-two-firewatch'
@@ -124,5 +126,10 @@ Plug 'MvanDiemen/ghostbuster'
 " Plug 'chriskempson/base16-vim'
 Plug 'ajmwagar/vim-dues'
 " Plug 'morhetz/gruvbox'
+Plug 'reedes/vim-colors-pencil'
+Plug 'fcpg/vim-fahrenheit'
+Plug 'fcpg/vim-orbital'
+Plug 'sonjapeterson/1989.vim'
+Plug 'farfanoide/vim-facebook'
 
 call plug#end()
