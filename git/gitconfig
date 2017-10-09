@@ -293,6 +293,9 @@
   # Show date and subject
 	lld = !git log --date=relative --format="%ad %s"
 
+  # show what we've worked on recently
+  recent =  for-each-ref --count=10 --sort=-committerdate refs/heads/ --format="%(refname:short)"
+
 ## WORKFLOW ALIASES ##
 
   # Stash aliases
@@ -405,6 +408,8 @@
 
   rj = "!vim -o $1.rej"
 
+  find-merge = "!sh -c 'commit=$0 && branch=${1:-HEAD} && (git rev-list $commit..$branch --ancestry-path | cat -n; git rev-list $commit..$branch --first-parent | cat -n) | sort -k2 -s | uniq -f1 -d | sort -n | tail -1 | cut -f2'"
+  show-merge = "!sh -c 'merge=$(git find-merge $0 $1) && [ -n \"$merge\" ] && git show $merge'"
 [merge]
   log = true
   #summary = true
@@ -429,16 +434,29 @@
   path = .gitconfig.local
 
 [user]
-  name = Mario
 
-[difftool "Kaleidoscope"]
-	cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
+[diff]
+  tool = meld
 
-[mergetool "Kaleidoscope"]
-	cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" \"$REMOTE\"
-[difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
-[mergetool "sourcetree"]
-	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
+[difftool]
+  prompt = false
+
+[difftool "meld"]
+  trustExitCode = true
+  cmd = open -W -a Meld --args \"$LOCAL\" \"$PWD/$REMOTE\"
+
+[merge]
+  tool = vimdiff
+
+[mergetool]
+  prompt = false
+
+[mergetool "meld"]
+  trustExitCode = false
+  cmd = open -W -a Meld --args --auto-merge \"$PWD/$LOCAL\" \"$PWD/$BASE\" \"$PWD/$REMOTE\" --output=\"$PWD/$MERGED\"
+
+[mergetool "nvim"]
+  cmd = nvim -d $BASE $LOCAL $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
+
+[mergetool "fugitive"]
+  cmd = vim -f -c "Gdiff" "$MERGED"
