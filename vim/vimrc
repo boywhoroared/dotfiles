@@ -27,7 +27,7 @@ endif
 set autoindent
 if has('smartindent')
   " See :h smartindent
-  "set smartindent
+  set smartindent
 endif
 
 " Use spaces instead of tabs
@@ -104,6 +104,8 @@ if has("windows")
   set splitright
 
   set noequalalways
+
+  set diffopt+=vertical
 
 endif
 
