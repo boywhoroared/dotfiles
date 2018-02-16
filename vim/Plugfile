@@ -52,13 +52,17 @@ Plug 'sniphpets/sniphpets-common'
 Plug 'sniphpets/sniphpets-postfix-codes'
 
 " Javascript
-Plug 'othree/yajs.vim', { 'for': 'javascript' }
-Plug 'vim-scripts/JavaScript-Indent', { 'for': 'javascript' }
-Plug 'elzr/vim-json', { 'for': 'json' }
-Plug 'rmanalan/jshint.vim', { 'for': ['javascript', 'json'] }
-Plug 'tpope/vim-jdaddy', { 'for': 'json' }
-Plug 'leafgarland/typescript-vim'
+Plug 'pangloss/vim-javascript'
 Plug 'jason0x43/vim-js-indent'
+Plug 'leafgarland/typescript-vim'
+Plug 'elzr/vim-json', { 'for': 'json' }
+Plug 'mxw/vim-jsx'
+Plug 'posva/vim-vue'
+Plug 'tpope/vim-jdaddy', { 'for': 'json' }
+Plug 'epilande/vim-react-snippets'
+Plug 'epilande/vim-es2015-snippets'
+
+Plug 'prettier/vim-prettier'
 
 " Python
 Plug 'hdima/python-syntax', { 'for': 'python' }
