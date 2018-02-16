@@ -193,3 +193,6 @@ set tags+=./tags
 command! EV tabedit $MYVIMRC <bar> lcd %:p:h
 command! SV source  $MYVIMRC
 
+" Allow Local (Project-specific) vimrc
+set exrc
+set secure
