@@ -14,7 +14,7 @@ Plug 'ajh17/VimCompletesMe'
 " Plug 'scrooloose/syntastic', { 'on': 'SyntasticCheck' }
 Plug 'w0rp/ale'
 Plug 'tpope/vim-repeat'
-Plug 'tpope/vim-surround'
+Plug 'machakann/vim-sandwich'
 Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-ragtag'
