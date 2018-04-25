@@ -21,11 +21,8 @@ set lines=48
 
 " Quick Fonts
 menu Fonts.Consolas            :set guifont=Consolas:h14<CR>
-menu Fonts.Fira\ Code          :set guifont=Fira\ Code:h14<CR>
-menu Fonts.Fira\ Code\ Light   :set guifont=Fira\ Code\ Light:h14<CR>
-menu Fonts.Fira\ Mono          :set guifont=Fira\ Mono:h14<CR>
-menu Fonts.Hack                :set guifont=Hack:h14<CR>
-menu Fonts.Hasklig             :set guifont=Hasklig:h14<CR>
+menu Fonts.Fira\ Code          :set guifont=Fira\ Code:h16<CR>
+menu Fonts.Fira\ Mono          :set guifont=Fira\ Mono:h16<CR>
 menu Fonts.Inconsolata         :set guifont=Inconsolata:h18<CR>
 menu Fonts.Input\ Mono\ Narrow :set guifont=Input\ Mono\ Narrow:h14 linespace=2<CR>
 menu Fonts.M+\ 1mn             :set guifont=M\+\ 1mn:h14<CR>
@@ -38,5 +35,6 @@ menu Fonts.Pragmata\ Pro       :set guifont=Pragmata\ Pro\ Mono:h14<CR>
 menu Fonts.Roboto\ Mono        :set guifont=Roboto\ Mono:h14<CR>
 menu Fonts.Roboto\ Mono\ Light :set guifont=Roboto\ Mono\ Light:h14<CR>
 menu Fonts.SF\ Mono            :set guifont=SF\ Mono\ Regular:h14<CR>
+menu Fonts.SF\ Mono\ Light     :set guifont=SF\ Mono\ Light:h14<CR>
 menu Fonts.Source\ Code\ Pro   :set guifont=Source\ Code\ Pro:h14<CR>
 menu Fonts.Ubuntu\ Mono        :set guifont=Ubuntu\ Mono:h16<CR>

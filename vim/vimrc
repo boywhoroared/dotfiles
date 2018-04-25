@@ -151,7 +151,7 @@ if has('syntax')
 
   " colourscheme
   " See also :h background . 'background' does not do what you think it does!
-  silent! colorscheme gotham256
+  silent! colorscheme apprentice 
 endif
 
 " Remember information about open Buffers when Vim exits
