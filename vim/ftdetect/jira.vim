@@ -1,1 +1,0 @@
-au BufRead,BufNewFile *.jira       set filetype=confluencewiki

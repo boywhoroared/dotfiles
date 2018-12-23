@@ -1,0 +1,5 @@
+#!/bin/bash
+
+LENGTH=${1-8}
+id=$(openssl rand 1000 | openssl sha1) && printf "%s${id:0:LENGTH}\n"
+

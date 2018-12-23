@@ -1,0 +1,462 @@
+[core]
+  editor = vim
+  pager = 
+	excludesfile = /Users/mparris/.gitignore_global
+
+[color]
+  ui = true
+
+[alias]
+
+## ALIASES ##
+  # add - record file contents to the index.
+  a = add
+
+  # branch - list, create, or delete branches.
+  b = branch
+
+  # commit - record changes to the repostiory with a message.
+  c = commit -m
+
+  # diff - show changes between commits, commit and working tree, etc.
+  d = diff
+
+  # edit - pipe the diff output to your editor of choice.
+  e = !git diff | $EDITOR
+
+  # fetch - download objects and refs from another repository.
+  f = fetch
+
+  # grep - print lines matching a pattern.
+  g = grep
+
+  # log - show commit logs.
+  l = log
+
+  # merge - join two or more development histories together.
+  m = merge
+
+  # checkout - update the working tree to match a branch or paths; we use "o" to mean "out".
+  o = checkout
+
+  # pull - fetch from and merge with another repository or a local branch.
+  p = pull
+
+  # remote - manage set of tracked repositories.
+  r = remote
+
+  # status - show the working tree differences. (Expert users may prefer: status -sb)
+  s = status -sb
+
+  # don't show untracked files in status
+  sn = status -sb -uno
+
+  # whatchanged - show logs with the differences introduced by each commit.
+  w = whatchanged
+
+  # add just the files in the local directory that are updated.
+  au = add --update .
+
+  # add by patch then commit - looks at each change, and asks if we want to put it in the repo, then commits.
+  ac = !git add -p; git commit
+
+  # add by patch - looks at each change, and asks if we want to put it in the repo.
+  ap = add -p
+
+  # add all
+  aa = add --al
+
+  # branch - list, create, or delete branches [same as "b"]
+  br = branch
+
+  # branch and only list branches whose tips are reachable from the specified commit (HEAD if not specified).
+  brm = branch --merged
+
+  # branch and only list branches whose tips are not reachable from the specified commit (HEAD if not specified).
+  brnm = branch --no-merged
+
+  # create the branch remotely, then checkout.
+  create-branch = !sh -c 'git push origin HEAD:refs/heads/$1 && git fetch origin && git branch --track $1 origin/$1 && cd . && git checkout $1' -
+
+  # delete local and remote branch
+  delete-branch = !sh -c 'git push origin :refs/heads/$1 && git remote prune origin && git branch -D $1' -
+
+  # merge the last branch to master
+  merge-branch = !git checkout master && git merge @{-1}
+
+  # commit - amend the tip of the current branch rather than creating a new commit.
+  ca = commit --amend
+
+  # create branch - checkouts a branch, creating a new one if it doesn't exist 
+  cb = checkout -b 
+
+  # commit with --verbose and with the given <msg> as the commit message.
+  ci = commit -v -m
+
+  # clone
+  cl = clone
+
+  # checkout - update the working tree to match a branch or paths. [same as "o" for "out"]
+  co = checkout
+
+  # diff - show changes not yet staged
+  dc = diff --cached
+
+  # diff - changes about to be commited
+  ds = diff --staged
+
+  # diff - show changes but by word, not line
+  dw = diff --word-diff
+
+  # log with a text-based graphical representation of the commit history.
+  lg = log --graph
+
+  # log with patch generation.
+  lp = log --patch
+
+  # log with items appearing in topological order, i.e. descendant commits are shown before their parents.
+  lt = log --topo-order
+
+  # log line summary: "YYYY-MM-DD <hash> <abbrev-commit>"
+  ll = log --pretty=format:'%ad %h %s' --abbrev-commit --date=short
+
+  # log line longer summary: a graph, colors, one-line commit messages, and iso dates.
+  lll = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cblue[%cn]%Creset %Cgreen(%cr)%Creset' --abbrev-commit --date=iso
+
+  # ls-files - show information about files in the index and the working tree; like Unix "ls" command.
+  ls = ls-files
+
+  # ls-ignored -  list files that git has ignored.
+  ls-ignored = ls-files --others --i --exclude-standard
+
+  # ls-changed - list files that were changed in <commit-ish>
+  # ex. git ls-changed HEAD^1
+  # ex. open all files changed in last commit: vim -p ($git ls-changed HEAD)
+  ls-changed = diff-tree --no-commit-id --name-only -r 
+
+  # ls-changes - list files that were changed in <commit-ish> with their status
+  ls-changes = diff-tree --no-commit-id --name-status -r 
+
+  # merge but without autocommit, and with a commit even if the merge resolved as a fast-forward.
+  me = merge --no-commit --no-ff
+
+  # pull with rebase - to provide a cleaner, linear, bisectable history.
+  #
+  # To integrate changes between branches, you can merge or rebase.
+  #
+  # When we use "git pull", git does a fetch then a merge.
+  # If we’ve made changes locally and someone else has pushed changes
+  # to our git host then git will automatically merge these together
+  # and create a merge commit that looks like this in the history:
+  #
+  #    12345678 - Merge branch 'foo' of bar into master
+  #
+  # When we use "git pull --rebase", git does a fetch then a rebase.
+  # A rebase resets the HEAD of your local branch to be the same as
+  # the remote HEAD, then replays your local commits back into repo.
+  # This means you don’t get any noisy merge messages in your history.
+  # This gives us a linear history, and also helps with git bisect.
+  #
+  # To automatically do "pull --rebase" for any branch based on master:
+  #
+  #    git config branch.master.rebase true
+  #
+  # To automatically do "pull --rebase" for all branches:
+  #
+  #     git config --global branch.autosetuprebase always
+  #
+  pr = pull --rebase
+
+  # Badass git pull alias (up) to show commit log that just got pulled in addition to changes
+  # https://gist.github.com/kneath/249223
+  up = !sh -c 'git pull --rebase --prune && git log --pretty=format:\"%Cred%ae %Creset- %C(yellow)%s %Creset(%ar)\" HEAD@{1}..'
+
+  # rebase - forward-port local commits to the updated upstream head.
+  rb = rebase
+
+  # rebase - continue the rebasing process after resolving a conflict manually and updating the index with the resolution.
+  rbc = rebase --continue
+
+  # rebase - restart the rebasing process by skipping the current patch.
+  rbs = rebase --skip
+
+  # rbi - rebase interactive on our unpushed commits.
+  #
+  # Before we push our local changes, we may want to do some cleanup,
+  # to improve our commit messages or squash related commits together.
+  #
+  # Let’s say I’ve pushed two commits that are related to a new feature and
+  # I have another where I made a spelling mistake in the commit message.
+  # When I run "git rbi" I get dropped into my editor with this:
+  #
+  #     pick 7f06d36 foo
+  #     pick ad544d0 goo
+  #     pick de3083a hoo
+  #
+  # Let's say I want to squash the "foo" and "goo" commits together,
+  # and also change "hoo" to say "whatever". To do these, I change "pick"
+  # to say "s" for squash; this tells git to squash the two together;
+  # I also edit "hoo". I make the file look like:
+  #
+  #     pick 7f06d36 foo
+  #     s ad544d0 goo
+  #     r de3083a whatever
+  # This gives me two new commit messages to edit, which I update.
+  # Now when I push the remote repo host receives two commits
+  #
+  #     3400455 - foo
+  #     5dae0a0 - whatever
+  #
+  rbi = !git rebase -i @{u}
+
+  # reflog - reference log that manages when tips of branches are updated.
+  rl = reflog
+
+  # remote - manage set of tracked repositories [same as "r"].
+  rr = remote
+
+  # remote show - gives some information about the remote <name>.
+  rrs = remote show
+
+  # remote update - fetch updates for a named set of remotes in the repository as defined by remotes.
+  rru = remote update
+
+  # remote prune - deletes all stale remote-tracking branches under <name>.
+  rrp = remote prune
+
+  # revert - undo the changes from some existing commits
+  rv = revert
+
+  # revert without autocommit; useful when you're reverting more than one commits' effect to your index in a row.
+  rvnc = revert --no-commit
+
+  # show-branch - print a list of branches and their commits.
+  sb = show-branch
+
+  # submodule - enables foreign repositories to be embedded within a dedicated subdirectory of the source tree.
+  sm = submodule
+
+  # submodule with initialize, update, and recursive; this is useful to bring a submodule fully up to date.
+  smu = submodule update --init --recursive
+
+## INSPECTION ALIASES ##
+
+  head = !"git log -n1"
+  heads = !"git log origin/master.. --format='%Cred%h%Creset;%C(yellow)%an%Creset;%H;%Cblue%f%Creset' | git name-rev --stdin --always --name-only | column -t -s';'"
+  lost = !"git fsck | awk '/dangling commit/ {print $3}' | git show --format='SHA1: %C(yellow)%h%Creset %f' --stdin | awk '/SHA1/ {sub(\"SHA1: \", \"\"); print}'"
+
+  # Diffs
+  diff-all = '!for name in $(git diff --name-only $1); do git difftool $1 $name & done'
+  diff-changes = diff --name-status -r
+  diff-stat = diff --stat -b -r
+  diff-staged = diff --cached
+
+## LOG ALIASES ##
+  l = log -p
+  ll = log --decorate --numstat
+  ld = log --decorate --date=relative
+  lt = log --graph --decorate --pretty=oneline --abbrev-commit
+  lta = log --graph --decorate --pretty=oneline --abbrev-commit --all
+  ly = !git yesterday
+  lo = log --oneline --abbrev-commit
+
+  log-graph = log --all --graph --decorate
+  log-refs = log --all --graph --decorate --oneline --simplify-by-decoration --no-merges
+  log-timeline = log --format='%h %an %ar - %s'
+  log-local = log --oneline origin..HEAD
+  log-fetched = log --oneline HEAD..origin/master
+
+  # Show log of changes, most recent first
+  log-changes = log --oneline --reverse
+
+  # Show log of new commits after you fetched, with stats, excluding merges
+  log-commits = log ORIG_HEAD.. --stat --no-merges
+
+  # Show log with dates in our local timezone
+  log-local = log --date=local
+
+  # Show the log for my own user email
+  log-me = !git log --author `git config user.email`
+
+  # Show log as a graph
+  log-graph = log --graph --oneline --decorate
+
+  # Show the date of the first commit
+  log-first-date = !"git log --date-order --date=iso --pretty=%ad --reverse | head -1"
+
+  # Show the recent day
+  log-day = log --since yesterday
+
+  # Show the recent day for your own user, suitable for a daily standup meeting.
+  log-standup = !git log --since yesterday --author `git config user.email` --pretty=short
+
+  # Show date and subject
+	lld = !git log --date=relative --format="%ad %s"
+
+  # show what we've worked on recently
+  recent =  for-each-ref --count=10 --sort=-committerdate refs/heads/ --format="%(refname:short)"
+
+## WORKFLOW ALIASES ##
+
+  # Stash aliases
+  save = !git stash save
+  pop = !git stash pop
+
+  # Stash snapshot - from http://blog.apiaxle.com/post/handy-git-tips-to-stop-you-getting-fired/
+  # Take a snapshot of your current working tree without removing changes.
+  # This is handy for refactoring where you can’t quite fit what you’ve done
+  # into a commit but daren’t stray too far from now without a backup.
+  #
+  # Running this:
+  #
+  #    $ git snapshot
+  #
+  # Creates this stash:
+  #
+  #    stash@{0}: On feature/handy-git-tricks: snapshot: Mon Apr 8 12:39:06 BST 2013
+  #
+  # And seemingly no changes to your working tree.
+  #
+  snapshot = !git stash save "snapshot: $(date)" && git stash apply "stash@{0}"
+
+ # Do everything we can to synchronize all changes
+  get = !git pull --rebase && git submodule update --init --recursive
+  put = !git commit -am "$1" && git push
+
+  # Undo aliases
+  undo = !git reset --hard
+  undoclean = !git reset --hard && git clean -fd
+  uncommit = !git reset --soft HEAD^
+  unadd = !git reset HEAD
+  unstage = !git reset HEAD
+
+  # Reset aliases, akin to undo alias above
+  reset-hard = !git reset --hard
+  reset-hard-clean = !git reset --hard && git clean -fd
+  reset-commit = !git reset --soft HEAD^
+  reset-add = !git reset HEAD
+  reset-stage = !git reset HEAD
+
+  # Merge Aliases
+
+  # merge and create a merge commit, even if the branch can be fast-forwared
+  mnf = merge --no-ff
+
+  # fast foward - only merge if the changes can be fast forwarded
+  ff = merge --ff-only
+
+  # fast forward the master branch
+  ffm = merge --ff-only origin/master
+
+  # show commits on $1 that don't exist on the current branch 
+  unmerged = log --pretty=oneline --abbrev-commit $1 ^HEAD
+
+  # Editing and adding conflicted files: when we get many merge conflicts
+  # and want to quickly solve them using an editor, then add the  files.
+  edit-unmerged = "!f() { git ls-files --unmerged | cut -f2 | sort -u ; }; $EDITOR `f`"
+  add-unmerged = "!f() { git ls-files --unmerged | cut -f2 | sort -u ; }; git add `f`"
+
+  # Ours & Theirs - easy merging when you know which files you want
+  #
+  # Sometimes during a merge you want to take a file from one side wholesale.
+  # The following aliases expose the ours and theirs commands which let you
+  # pick a file(s) from the current branch or the merged branch respectively.
+  #
+  # N.b. the function is there as hack to get $@ doing
+  # what you would expect it to as a shell user.
+  #
+  ours   = "!f() { git checkout --ours $@ && git add $@; }; f"
+  theirs = "!f() { git checkout --theirs $@ && git add $@; }; f"
+
+  # Work In Progress: from https://gist.github.com/492227 and VonC on stackoverflow.
+  # This enables a quick way to add all new and modified files to the index,
+  # while cleaning the index from the files removed from the working tree;
+  # this cleaning will facilite a rebase, because there won't be any conlfict
+  # due to an "unclean" working directory (not in sync with the index).
+  # The unwip will restore the deleted files to the working tree.
+  wip = !"git add -A; git ls-files --deleted -z | xargs -0 git rm; git commit -m \"wip\""
+  unwip = !"git log -n 1 | grep -q -c wip && git reset HEAD~1"
+
+  # Assume: from http://blog.apiaxle.com/post/handy-git-tips-to-stop-you-getting-fired/
+  # Sometimes we want to change a file in a repo, but never check in your edits.
+  # We can't use .gitignore because the file is tracked. We use update-index.
+  #
+  # Suppose we want to edit passwords.txt and for god's sake never check it in:
+  #
+  #     $ git status
+  #     modified passwords.txt
+  #     modified foo.txt
+  #
+  #     $ git assume passwords.txt
+  #     $ git status
+  #     modified foo.txt
+  #
+  #     $ git assumed
+  #     passwords.txt
+  #
+  #     $ git unassume passwords.txt
+  #     $ git status
+  #     modified passwords.txt
+  #     modified foo.txt
+  #
+  assume   = update-index --assume-unchanged
+  unassume = update-index --no-assume-unchanged
+  assumed  = "!git ls-files -v | grep ^h | cut -c 3-"
+
+  # Delete all branches that have already been merged into master.
+  master-cleanse = !"git checkout master && git branch --merged | xargs git branch -d"
+
+  rj = "!vim -o $1.rej"
+
+  find-merge = "!sh -c 'commit=$0 && branch=${1:-HEAD} && (git rev-list $commit..$branch --ancestry-path | cat -n; git rev-list $commit..$branch --first-parent | cat -n) | sort -k2 -s | uniq -f1 -d | sort -n | tail -1 | cut -f2'"
+  show-merge = "!sh -c 'merge=$(git find-merge $0 $1) && [ -n \"$merge\" ] && git show $merge'"
+[merge]
+  log = true
+  #summary = true
+  conflictstyle = diff3
+
+[rerere]
+  enabled = 1
+
+[diff]
+  mnemonicprefix = true
+
+[push]
+  default = "current"
+
+[commit]
+  template = ~/.gitmessage
+
+[init]
+  templatedir = ~/.gittemplate
+
+[include]
+  path = .gitconfig.local
+
+[user]
+
+[diff]
+  tool = meld
+
+[difftool]
+  prompt = false
+
+[difftool "meld"]
+  trustExitCode = true
+  cmd = open -W -a Meld --args \"$LOCAL\" \"$PWD/$REMOTE\"
+
+[merge]
+  tool = vimdiff
+
+[mergetool]
+  prompt = false
+
+[mergetool "meld"]
+  trustExitCode = false
+  cmd = open -W -a Meld --args --auto-merge \"$PWD/$LOCAL\" \"$PWD/$BASE\" \"$PWD/$REMOTE\" --output=\"$PWD/$MERGED\"
+
+[mergetool "nvim"]
+  cmd = nvim -d $BASE $LOCAL $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
+
+[mergetool "fugitive"]
+  cmd = vim -f -c "Gdiff" "$MERGED"

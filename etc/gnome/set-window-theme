@@ -1,6 +1,0 @@
-#!/bin/bash
-
-# Set Window Theme for GNOME3 Shell Metacity/Gnome Metacity
-# example:
-# gtk-theme "Greybird"
-gsettings set org.gnome.desktop.wm.preferences theme "$1" 

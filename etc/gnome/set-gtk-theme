@@ -1,6 +1,0 @@
-#!/bin/bash
-
-# Set GTK Theme for GNOME3/Shell/Classic
-# example:
-# gtk-theme "Greybird"
-gsettings set org.gnome.desktop.interface gtk-theme "$1" 
