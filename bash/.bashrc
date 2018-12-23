@@ -76,9 +76,6 @@ HISTCONTROL=ignoredups
 # Repeat the expanded line on successful history expansion
 shopt -s histverify
 
-# Don't use aliases, functions are better
-shopt -u expand_aliases
-
 # Don't use Bash's builtin host completion
 shopt -u hostcomplete
 
