@@ -17,7 +17,9 @@ git clone git@github.com:boywhoroared/dotfiles.git
 
 # Install dots packages to $HOME
 cd dotfiles
-stow -d $(pwd) -t $HOME bash
-stow -d $(pwd) -t $HOME sh
-stow -d $(pwd) -t $HOME tmux
+stow $(pwd) -t $HOME bash
+stow $(pwd) -t $HOME sh
+stow $(pwd) -t $HOME tmux
+stow $(pwd) -t $HOME keyboard
+stow $(pwd) -t $HOME git
 ```
