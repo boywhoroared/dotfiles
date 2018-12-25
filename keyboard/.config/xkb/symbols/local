@@ -1,0 +1,11 @@
+default  partial alphanumeric_keys modifier_keys
+xkb_symbols "local(hyper)" {
+    key <CAPS> {	[ Control_L		]	};
+    key <LCTL> {	[ Hyper_L		]	};
+    key <HYPR> {	[ Hyper_L		]	};
+    modifier_map Mod4   { <HYPR> };
+
+    modifier_map Mod3 { Super_L, Super_R };
+    key <SUPR> {    [ NoSymbol, Super_L ]   };
+    modifier_map Mod3   { <SUPR> };
+};
