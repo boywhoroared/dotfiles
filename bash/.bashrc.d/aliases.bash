@@ -29,7 +29,7 @@ h() {
 }
 
 # find a command in history
-h?() {
+hs() {
   history | grep "$@"
 }
 
