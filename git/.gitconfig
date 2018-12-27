@@ -2,6 +2,8 @@
   editor = vim
   pager = 
 	excludesfile = /Users/mparris/.gitignore_global
+	eol = lf
+	autocrlf = input
 
 [color]
   ui = true
