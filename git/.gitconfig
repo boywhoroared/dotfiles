@@ -1,9 +1,9 @@
 [core]
   editor = vim
   pager = 
-	excludesfile = /Users/mparris/.gitignore_global
-	eol = lf
-	autocrlf = input
+  excludesfile = /Users/mparris/.gitignore_global
+  eol = lf
+  autocrlf = input
 
 [color]
   ui = true
@@ -89,8 +89,8 @@
   # commit - amend the tip of the current branch rather than creating a new commit.
   ca = commit --amend
 
-  # create branch - checkouts a branch, creating a new one if it doesn't exist 
-  cb = checkout -b 
+  # create branch - checkouts a branch, creating a new one if it doesn't exist
+  cb = checkout -b
 
   # commit with --verbose and with the given <msg> as the commit message.
   ci = commit -v -m
@@ -293,7 +293,7 @@
   log-standup = !git log --since yesterday --author `git config user.email` --pretty=short
 
   # Show date and subject
-	lld = !git log --date=relative --format="%ad %s"
+  lld = !git log --date=relative --format="%ad %s"
 
   # show what we've worked on recently
   recent =  for-each-ref --count=10 --sort=-committerdate refs/heads/ --format="%(refname:short)"
@@ -427,10 +427,10 @@
   default = "current"
 
 [commit]
-  template = ~/.gitmessage
+  template = .gitmessage
 
 [init]
-  templatedir = ~/.gittemplate
+#  templatedir = ~/.gittemplate
 
 [include]
   path = .gitconfig.local
@@ -446,7 +446,6 @@
 [difftool "meld"]
   trustExitCode = true
   cmd = open -W -a Meld --args \"$LOCAL\" \"$PWD/$REMOTE\"
-
 [merge]
   tool = vimdiff
 
