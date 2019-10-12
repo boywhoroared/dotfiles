@@ -32,6 +32,9 @@ mesg n
 # Use vi mode
 set -o vi
 
+# Bind Ctrl+L while insert mode
+bind -m vi-insert "\C-l":clear-screen
+
 # Don't allow the creation of aliases, functions are better
 # http://www.gnu.org/software/bash/manual/html_node/Aliases.html#Aliases
 # 'For almost every purpose, shell functions are preferred over aliases.'
