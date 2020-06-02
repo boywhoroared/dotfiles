@@ -424,13 +424,13 @@
   mnemonicprefix = true
 
 [push]
-  default = "current"
+  default = current
 
 [commit]
-  template = .gitmessage
+  ; template = .git/commit-msg
 
 [init]
-#  templatedir = ~/.gittemplate
+;  templatedir = ~/.gittemplate
 
 [include]
   path = .gitconfig.local
