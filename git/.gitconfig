@@ -1,6 +1,6 @@
 [core]
   editor = vim
-  pager = 
+  pager =
   excludesfile = /Users/mparris/.gitignore_global
   eol = lf
   autocrlf = input
@@ -110,20 +110,8 @@
   # diff - show changes but by word, not line
   dw = diff --word-diff
 
-  # log with a text-based graphical representation of the commit history.
-  lg = log --graph
-
   # log with patch generation.
   lp = log --patch
-
-  # log with items appearing in topological order, i.e. descendant commits are shown before their parents.
-  lt = log --topo-order
-
-  # log line summary: "YYYY-MM-DD <hash> <abbrev-commit>"
-  ll = log --pretty=format:'%ad %h %s' --abbrev-commit --date=short
-
-  # log line longer summary: a graph, colors, one-line commit messages, and iso dates.
-  lll = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cblue[%cn]%Creset %Cgreen(%cr)%Creset' --abbrev-commit --date=iso
 
   # ls-files - show information about files in the index and the working tree; like Unix "ls" command.
   ls = ls-files
@@ -134,10 +122,10 @@
   # ls-changed - list files that were changed in <commit-ish>
   # ex. git ls-changed HEAD^1
   # ex. open all files changed in last commit: vim -p ($git ls-changed HEAD)
-  ls-changed = diff-tree --no-commit-id --name-only -r 
+  ls-changed = diff-tree --no-commit-id --name-only -r
 
   # ls-changes - list files that were changed in <commit-ish> with their status
-  ls-changes = diff-tree --no-commit-id --name-status -r 
+  ls-changes = diff-tree --no-commit-id --name-status -r
 
   # merge but without autocommit, and with a commit even if the merge resolved as a fast-forward.
   me = merge --no-commit --no-ff
@@ -211,21 +199,6 @@
   #
   rbi = !git rebase -i @{u}
 
-  # reflog - reference log that manages when tips of branches are updated.
-  rl = reflog
-
-  # remote - manage set of tracked repositories [same as "r"].
-  rr = remote
-
-  # remote show - gives some information about the remote <name>.
-  rrs = remote show
-
-  # remote update - fetch updates for a named set of remotes in the repository as defined by remotes.
-  rru = remote update
-
-  # remote prune - deletes all stale remote-tracking branches under <name>.
-  rrp = remote prune
-
   # revert - undo the changes from some existing commits
   rv = revert
 
@@ -247,25 +220,11 @@
   heads = !"git log origin/master.. --format='%Cred%h%Creset;%C(yellow)%an%Creset;%H;%Cblue%f%Creset' | git name-rev --stdin --always --name-only | column -t -s';'"
   lost = !"git fsck | awk '/dangling commit/ {print $3}' | git show --format='SHA1: %C(yellow)%h%Creset %f' --stdin | awk '/SHA1/ {sub(\"SHA1: \", \"\"); print}'"
 
-  # Diffs
-  diff-all = '!for name in $(git diff --name-only $1); do git difftool $1 $name & done'
-  diff-changes = diff --name-status -r
-  diff-stat = diff --stat -b -r
-  diff-staged = diff --cached
-
-## LOG ALIASES ##
-  l = log -p
-  ll = log --decorate --numstat
-  ld = log --decorate --date=relative
-  lt = log --graph --decorate --pretty=oneline --abbrev-commit
-  lta = log --graph --decorate --pretty=oneline --abbrev-commit --all
-  ly = !git yesterday
   lo = log --oneline --abbrev-commit
 
   log-graph = log --all --graph --decorate
   log-refs = log --all --graph --decorate --oneline --simplify-by-decoration --no-merges
   log-timeline = log --format='%h %an %ar - %s'
-  log-local = log --oneline origin..HEAD
   log-fetched = log --oneline HEAD..origin/master
 
   # Show log of changes, most recent first
@@ -350,7 +309,7 @@
   # fast forward the master branch
   ffm = merge --ff-only origin/master
 
-  # show commits on $1 that don't exist on the current branch 
+  # show commits on $1 that don't exist on the current branch
   unmerged = log --pretty=oneline --abbrev-commit $1 ^HEAD
 
   # Editing and adding conflicted files: when we get many merge conflicts
